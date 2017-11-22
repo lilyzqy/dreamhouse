@@ -7,8 +7,18 @@ class SessionForm extends React.Component{
     this.state = {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      designer: false
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      if(this.props.history === '/home'){
+        this.props.history.push('/');
+      }
+      this.props.history.push('/');
+    }
   }
 
   handleSubmit(e){
@@ -21,7 +31,9 @@ class SessionForm extends React.Component{
 
   handleChange(field){
     return (e) =>{
+      this.setState({
 
+      });
     };
   }
 
