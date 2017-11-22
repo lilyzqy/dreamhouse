@@ -8,7 +8,7 @@ import { login, signup } from '../../actions/session_actions';
 const mapSTPs = (state) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
-    errors: state.errors.session
+    // errors: state.errors.session
   };
 };
 

@@ -17,7 +17,7 @@ class SessionForm extends React.Component{
       if(this.props.history === '/home'){
         this.props.history.push('/');
       }
-      this.props.history.push('/');
+      this.props.history.back();
     }
   }
 
@@ -37,6 +37,11 @@ class SessionForm extends React.Component{
     };
   }
 
+  render(){
+    return (
+      <div>Hi</div>
+    );
+  }
 
 
 }
