@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20171121210755) do
     t.string "image_url", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.boolean "designer", null: false
+    t.boolean "designer", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
