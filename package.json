@@ -14,8 +14,7 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.8.1"
-  }
-  {
+  },
   "engines": {
     "node": "6.10.1",
     "npm": "3.10.10"
@@ -23,5 +22,4 @@
   "scripts": {
     "postinstall": "webpack"
   }
-}
 }
