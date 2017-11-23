@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import LoginForm from './login_form';
 
 import { login } from '../../actions/session_actions';

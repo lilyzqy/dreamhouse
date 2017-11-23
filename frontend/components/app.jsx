@@ -7,16 +7,14 @@ import {
 
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
-import NavContainer from './nav/nav_container';
+import HeaderContainer from './nav/header_container';
 import Home from './home';
 import { AuthRoute } from '../util/route_util';
 
 const App = () => {
   return (
     <div>
-      <header>
-        <NavContainer />
-      </header>
+      <HeaderContainer />
       <Switch>
         <Route exact path="/home" component={Home} />
         <AuthRoute path="/login" component={LoginFormContainer} />

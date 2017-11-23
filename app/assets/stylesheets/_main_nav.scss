@@ -1,0 +1,113 @@
+.main-nav {
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #880305;
+  padding: 0 24px 0 24px;
+  box-sizing: border-box;
+}
+
+
+.logo > p {
+	font-family: 'Poiret One', cursive;
+	color: white;
+	font-size: 24px;
+  display: flex;
+}
+
+.logo {
+  text-decoration: none;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.nav-button{
+  text-decoration: none;
+  text-align: center;
+  margin-right: 8px;
+  background-color: #f9e8eb;
+  color: #001132;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 80px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.right-nav {
+  width: 180px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-bar {
+  background-color: #f9e8eb;
+  width: 70%;
+  height:32px;
+  border-radius: 2px;
+}
+//
+// .left-nav > ul,
+// .right-nav > ul {
+//   display: flex;
+//   justify-content: space-between;
+//   margin: 2px;
+//   // background-color: orange;
+//   width: 170px;
+//   height: 20px;
+// }
+//
+// .left-nav > ul > li {
+//   display: inline;
+//   box-sizing: border-box;
+//   font-family: serif;
+//   font-size: 14px;
+// }
+//
+// .right-nav > ul > li {
+//   display: flex;
+//   font-family: serif;
+// }
+//
+// .right-nav > ul > li:last-of-type {
+//   font-size: 15px;
+// }
+//
+// .left-nav > ul > li:hover,
+// .right-nav > ul > li:last-of-type:hover {
+//   background-color: #dddddd;
+//   border-radius: 4px;
+// }
+//
+// .left-nav span {
+//
+// }
+//
+// .left-nav i {
+//   display: inline;
+//   margin: 10px;
+// }
+//
+// .right-nav i {
+//   // background-color: $light-gray;
+//   padding: 3px;
+//   border-radius: 2px;
+// }
+//
+// #search-modal-btn {
+//   // background-color: $light-gray;
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+//   width: 85px;
+//   // border-radius: 5px;
+// }
+//
+// #sections-sidebar-btn {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+//   width: 85px;
+// }

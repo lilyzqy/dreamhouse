@@ -5,7 +5,7 @@ import LoggedInNav from './loggedin_nav';
 import LoggedOutNav from './loggedout_nav';
 
 
-class Nav extends React.Component {
+class Header extends React.Component {
 
   render(){
     const {loggedIn, logout} = this.props;
@@ -15,15 +15,16 @@ class Nav extends React.Component {
       <LoggedOutNav />
     );
     return (
-      <div>
-        <Link to="/home">
-          <h3>Dreamhouse</h3>
+      <header className="main-nav">
+        <Link to="/home" className="logo">
+          <p>Dreamhouse</p>
         </Link>
+        <p className="search-bar"> </p>
         {Buttons}
-      </div>
+      </header>
     );
   }
 
 }
 
-export default Nav;
+export default Header;

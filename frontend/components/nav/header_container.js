@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import { logout } from '../../actions/session_actions';
-import Nav from './nav';
+import Header from './header';
 
 const mapSTPs = (state) => {
   return {
@@ -16,4 +16,4 @@ const mapDTPs = (dispatch) => {
   };
 };
 
-export default withRouter(connect(mapSTPs,mapDTPs)(Nav));
+export default withRouter(connect(mapSTPs,mapDTPs)(Header));
