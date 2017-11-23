@@ -6,7 +6,7 @@ const Home = () => {
     <div className="home">
       <span>Get inspired<br/>By photos of well designed real projects <br/>
       Join us to create your own collection of your favourite designs</span>
-    <Link to="/sign-up">Join Free</Link>
+    <Link to="/signup">Join Free</Link>
     </div>
   );
 };
