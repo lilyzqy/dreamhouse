@@ -15,6 +15,7 @@ const App = () => {
   return (
     <div>
       <header>
+        <NavContainer />
       </header>
       <Switch>
         <Route exact path="/home" component={Home} />
@@ -30,5 +31,3 @@ const App = () => {
 };
 
 export default App;
-
-// <NavContainer />
