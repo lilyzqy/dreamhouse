@@ -47,8 +47,9 @@ class SignupForm extends React.Component{
 
   render(){
     return (
-      <div>
-        <form>
+      <div className='session-page'>
+        <img src= "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?auto=format&fit=crop&w=800&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"></img>
+        <form className='session-form'>
           <h1>Sign up</h1>
           <label>Username:
             <input type='text' onChange={this.handleChange('username')}></input>

@@ -37,8 +37,8 @@ class LoginForm extends React.Component{
 
   render(){
     return (
-      <div>
-        <form>
+      <div className='session-page'>
+        <form className='session-form'>
           <h1>Log In</h1>
           <label>Email:
             <input type='text' onChange={this.handleChange('email')}></input>

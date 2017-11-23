@@ -1,6 +1,8 @@
 .home {
   position: relative;
-
+  overflow: hidden;
+  height: calc(100vh - 65px);
+  width: 100%;
 }
 
 .home-text {
@@ -11,6 +13,19 @@
 
 }
 
-img {
-  clip: rect(1000px, 0px,  0px,  0px);
+.home-text > a {
+
+}
+
+.hero-pic {
+  clip: rect(200px, 2000px, 1000px, 0px);
+  top: -200px;
+
+}
+
+@media screen and(max-width: 1200px) {
+  .hero-pic{
+    height: 110%;
+    width: auto;
+  }
 }
