@@ -23,7 +23,7 @@ class LoginForm extends React.Component{
     return (e) => {
       e.preventDefault();
       const user = this.state;
-      this.props.login({user});
+      this.props.login(user);
     };
   }
 
@@ -46,7 +46,7 @@ class LoginForm extends React.Component{
           <label>Password:
             <input type='password' onChange={this.handleChange('password')}></input>
           </label>
-          <button type='sumbit' onClick={this.handleSubmit()}></button>
+          <button type='sumbit' onClick={this.handleSubmit()}>Log In</button>
         </form>
       </div>
     );

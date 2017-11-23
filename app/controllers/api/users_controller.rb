@@ -1,12 +1,13 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
+    @user.image_url = "https://www.flickr.com/photos/19159227@N06/37874215174/in/pool-51035615908@N01"
 
     if @user.save
       login!(@user)
       render :show
     else
-      render json:@user.errors.fullmessages, status: 422
+      render json:@user.errors.full_messages, status: 422
     end
   end
 
@@ -16,7 +17,7 @@ class Api::UsersController < ApplicationController
     if @user && @user.update(user_params)
       render :show
     else
-      render json: @user.errors.fullmessages, status: 422
+      render json: @user.errors.full_messages, status: 422
     end
   end
 
