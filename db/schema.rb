@@ -17,13 +17,11 @@ ActiveRecord::Schema.define(version: 20171124174601) do
 
   create_table "pictures", force: :cascade do |t|
     t.string "image_url", null: false
-    t.integer "user_id", null: false
     t.integer "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["image_url"], name: "index_pictures_on_image_url", unique: true
     t.index ["project_id"], name: "index_pictures_on_project_id"
-    t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
