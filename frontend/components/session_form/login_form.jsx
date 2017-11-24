@@ -38,6 +38,7 @@ class LoginForm extends React.Component{
   render(){
     return (
       <div className='session-page'>
+        <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=634&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"></img>
         <form className='session-form'>
           <h1>Log In</h1>
           <label>Email:
@@ -46,7 +47,9 @@ class LoginForm extends React.Component{
           <label>Password:
             <input type='password' onChange={this.handleChange('password')}></input>
           </label>
-          <button type='sumbit' onClick={this.handleSubmit()}>Log In</button>
+          <div className="session-button">
+            <button type='sumbit' onClick={this.handleSubmit()}>Log In</button>
+          </div>
         </form>
       </div>
     );

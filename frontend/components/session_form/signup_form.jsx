@@ -60,9 +60,12 @@ class SignupForm extends React.Component{
           <label>Password:
             <input type='password' onChange={this.handleChange('password')}></input>
           </label>
-          <input type="checkbox" id="designerCheck" onChange={this.handleCheck()} checked={this.state.designer}></input>
-    <label htmlFor="designerCheck">I'm a designer</label>
-          <button type='sumbit' onClick={this.handleSubmit()}></button>
+          <label htmlFor="designerCheck" id="session-check">
+            <input type="checkbox" id="designerCheck" onChange={this.handleCheck()} checked={this.state.designer}></input>
+            I'm a designer</label>
+          <div className="session-button">
+            <button type='sumbit' onClick={this.handleSubmit()}>Sign Up</button>
+          </div>
         </form>
       </div>
     );
