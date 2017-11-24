@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 
 class LoggedInNav extends React.Component {
@@ -11,13 +12,17 @@ class LoggedInNav extends React.Component {
   }
 
   render(){
+    let MyProfile = null;
+    if (this.props.location.pathname !== '/profile'){
+      MyProfile = (<Link to="/user/:userId" className='nav-button'>My Profile</Link>);
+    }
     return (
       <div>
-        <Link to="/user/:userId" >My Profile</Link>
-        <Link to="/login" onClick={this.handleSubmit()}>Log Out</Link>
+        {MyProfile}
+        <Link to="/login" className='nav-button' onClick={this.handleSubmit()}>Log Out</Link>
       </div>
     );
   }
 }
 
-export default LoggedInNav;
+export default withRouter(LoggedInNav);
