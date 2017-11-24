@@ -1,4 +1,8 @@
 class Api::UsersController < ApplicationController
+  def index
+    @users = User.all
+  end
+
   def create
     @user = User.new(user_params)
     @user.image_url = "https://www.flickr.com/photos/19159227@N06/37874215174/in/pool-51035615908@N01"
