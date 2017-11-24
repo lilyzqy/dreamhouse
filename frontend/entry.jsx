@@ -4,14 +4,14 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-import {login, signup, logout} from './actions/session_actions';
+import {fetchUsers, fetchUser, updateUser} from './actions/user_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
+  window.fetchUsers = fetchUsers;
+  window.fetchUser = fetchUser;
+  window.updateUser = updateUser;
 
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.dispatch = store.dispatch;
+  window.getState = store.getState;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
