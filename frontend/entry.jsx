@@ -4,14 +4,14 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-import {fetchUsers, fetchUser, updateUser} from './actions/user_actions';
+import {fetchPicture, deletePicture, createPicture} from './util/picture_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-  window.fetchUsers = fetchUsers;
-  window.fetchUser = fetchUser;
-  window.updateUser = updateUser;
+  window.fetchPicture = fetchPicture;
+  window.deletePicture = deletePicture;
+  window.createPicture = createPicture;
 
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
