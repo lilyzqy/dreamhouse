@@ -1,4 +1,9 @@
 class Api::PicturesController < ApplicationController
+  before_action :require_logged_in, only: [:create, :destroy]
+
+  def index
+    @pictures = Picture.all
+  end
 
   def show
     @picture = Picture.find_by(id: params[:id])
@@ -20,7 +25,7 @@ class Api::PicturesController < ApplicationController
       @picture.destroy
       render :show
     else
-      render json: @picture.errors.full_messages, status: 422
+      render json: ["Can't find picture"], status: 404
     end
   end
 
