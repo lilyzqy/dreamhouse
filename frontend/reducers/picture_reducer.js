@@ -15,3 +15,5 @@ const pictureReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default pictureReducer;

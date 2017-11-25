@@ -1,0 +1,21 @@
+.picdetail {
+  height: 2200px;
+}
+
+.up {
+  max-height: 50%;
+  width: 100%;
+  background-color: rgba(217, 217, 219, 0.5) ;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.up > img {
+  height: 80%;
+  width: 60%;
+}
+
+.bottom {
+  height: 1000px;
+}
