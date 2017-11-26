@@ -4,7 +4,6 @@ class Api::ProjectsController < ApplicationController
   def index
     user = User.find_by(id: params[:user_id])
     @projects = user.projects
-    # binding.pry
   end
 
   def show

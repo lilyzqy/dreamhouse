@@ -4,8 +4,8 @@ export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 
-export const fetchProjects = () => dispatch => (
-  APIUtil.fetchProjects().then(projects => dispatch(receiveProjects(projects)))
+export const fetchUserProjects = (userId) => dispatch => (
+  APIUtil.fetchUserProjects(userId).then(projects => dispatch(receiveProjects(projects)))
 );
 export const fetchProject = (id) => dispatch => (
   APIUtil.fetchProject(id).then(project => dispatch(receiveProject(project)))
