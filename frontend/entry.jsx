@@ -4,14 +4,15 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-import {fetchPicture, deletePicture, createPicture} from './util/picture_api_util';
+import {fetchUserProjects, fetchProject, deleteProject, createProject} from './util/project_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-  window.fetchPicture = fetchPicture;
-  window.deletePicture = deletePicture;
-  window.createPicture = createPicture;
+  window.fetchProject = fetchProject;
+  window.deleteProject = deleteProject;
+  window.createProject = createProject;
+  window.fetchUserProjects = fetchUserProjects;
 
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };

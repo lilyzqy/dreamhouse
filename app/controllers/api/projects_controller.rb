@@ -1,9 +1,10 @@
-class Api::ProjectController < ApplicationController
+class Api::ProjectsController < ApplicationController
   before_action :require_logged_in, only: [:create, :destroy]
-  
+
   def index
-    user = User.find_by(id: params[:userId])
+    user = User.find_by(id: params[:user_id])
     @projects = user.projects
+    # binding.pry
   end
 
   def show
@@ -12,7 +13,7 @@ class Api::ProjectController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.user_id = params[:userId]
+    @project.user_id = current_user.id
     if @project.save
       render :show
     else

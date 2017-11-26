@@ -7,9 +7,7 @@ class Picture < ApplicationRecord
   foreign_key: :project_id,
   primary_key: :id
 
-  belongs_to :user,
-  through: :project,
-  source: :user
+  delegate :user, to: :project
 
 
 end

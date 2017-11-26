@@ -1,3 +1,10 @@
+export const fetchPictures = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/pictures'
+  });
+};
+
 export const fetchPicture = (id) => {
   return $.ajax({
     method: 'GET',
