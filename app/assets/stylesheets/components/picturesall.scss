@@ -1,0 +1,19 @@
+.pics {
+  max-height: 350px;
+  max-width: 400px;
+  height: auto;
+  width: auto;
+  margin: 20px;
+  display: flex;
+}
+
+.pics-index {
+  margin: 40px;
+}
+
+.inside-title {
+  margin-left: 60px;
+  margin-top: 40px;
+  font-family: $welcometext;
+  color: $navy;
+}

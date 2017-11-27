@@ -1,6 +1,5 @@
 class Picture < ApplicationRecord
   validates :image_url, presence: true, uniqueness: true
-  validates :project_id, presence: true
 
   belongs_to :project,
   class_name: :Project,
