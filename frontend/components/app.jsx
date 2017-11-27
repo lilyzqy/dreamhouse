@@ -10,6 +10,7 @@ import SignupFormContainer from './session_form/signup_form_container';
 import HeaderContainer from './nav/header_container';
 import PicDetailContainer from './picture/pic_detail_container';
 import PicAllContainer from './picture/pic_all_container';
+import UserProjectsContainer from './project/user_project_container';
 import Home from './home';
 import { AuthRoute } from '../util/route_util';
 
@@ -19,8 +20,9 @@ const App = () => {
       <HeaderContainer />
       <Switch>
         <Route exact path="/home" component={Home} />
+        <Route exact path="/pictures/:picId" component={PicDetailContainer} />
         <Route path="/pictures" component={PicAllContainer} />
-        <Route path="/pictures/:picId" component={PicDetailContainer} />
+        <Route path="/users/:userId/projects" component={UserProjectsContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
       </Switch>
