@@ -1,11 +1,12 @@
 .home {
   position: relative;
   overflow: hidden;
-  height: calc(100vh - 65px);
+  height: 100vh;
   width: 100%;
+  // background-image: url("https://images.unsplash.com/photo-1509205705783-0623e1c4e404?auto=format&fit=crop&w=1403&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
 }
 
-.home-text {
+.home-text, .explorelink {
   position: absolute;
   top: 38%;
   width: 100vw;
@@ -15,8 +16,13 @@
   font-family: $welcometext;
   flex-direction: column;
   align-items: center;
-  color: #00113a;
+  color: $navy;
   font-size: 28px;
+}
+
+.explorelink {
+  top: 90%;
+  align-items: flex-end;
 }
 
 .inspire {
@@ -28,22 +34,28 @@
   margin-bottom: 5px;
 }
 
-.home-text > a {
+.joinlink {
   font-family: $buttontext;
   background: white;
   text-decoration: none;
-  color: #00113a;
+  color: $navy;
   margin-top: 20px;
   padding: 6px 20px 6px 20px;;
   border-radius: 4px;
   box-sizing: border-box;
-  box-shadow: 0px 2px 5px #00113a;
+  box-shadow: 0px 2px 5px $navy;
 }
 
 .hero-pic {
   clip: rect(200px, 2000px, 1000px, 0px);
   top: -200px;
+}
 
+.explorelink > a {
+  color: $navy;
+  text-decoration: none;
+  font-size: 20px;
+  padding-right: 50px;
 }
 
 @media screen and(max-width: 1200px) {

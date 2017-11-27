@@ -7,6 +7,7 @@ import LoggedOutNav from './loggedout_nav';
 
 class Header extends React.Component {
 
+
   render(){
     const {loggedIn, logout} = this.props;
     let Buttons = loggedIn ? (
@@ -14,8 +15,12 @@ class Header extends React.Component {
     ):(
       <LoggedOutNav />
     );
+    let home = undefined;
+    if(this.props.location.pathname === '/home'){
+      home = 'home-nav';
+    }
     return (
-      <header className="main-nav">
+      <header className={`main-nav ${home}`}>
         <Link to="/home" className="logo">
           <p>Dreamhouse</p>
         </Link>
