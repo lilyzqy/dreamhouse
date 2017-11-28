@@ -2,24 +2,59 @@
   position: absolute;
   clip: rect(400px, 2000px, 680px, 0px);
   top: -335px;
-  z-index: 1000;
+  z-index: 0;
 }
 
 .profile-text {
+  margin-left: 140px;
+  padding-bottom: 20px;
   position: absolute;
   display: flex;
   z-index: 1;
+  box-sizing: border-box;
+}
+
+.profile-title{
+  height: 280px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .profile-text {
-  height: 1000px;
+  display: flex;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .profile-background {
-  height: 2000px;
+  height: 280px;
 }
 
 .profile-text img {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: auto;
+  z-index: 100;
+  border-radius: 50px;
+}
+
+.profile-text h2 {
+  font-size: 28px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-title a {
+  display: flex;
+  align-self: flex-end;
+  z-index: 100;
+  margin-top: 210px;
+  margin-right: 150px;
+  text-decoration: none;
+  color: $navy;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
 }

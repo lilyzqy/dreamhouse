@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import fetchProject from '../../actions/project_actions';
 import ProjectDetail from './project_detail';
 
 const mapSTPs = (state, ownProps) => ({
   project: state.entities.projects[ownProps.match.params.projectId]
 });
 //
-// const mapDTPs = dispatch => ({
-//   fetchUserProjects: (userId) => dispatch(fetchUserProjects(userId))
-// });
+const mapDTPs = dispatch => ({
+  fetchProject: (projectId) => dispatch(fetchProject(projectId))
+});
 
-export default withRouter(connect(mapSTPs, null)(ProjectDetail));
+export default withRouter(connect(mapSTPs, mapDTPs)(ProjectDetail));
