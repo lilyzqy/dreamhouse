@@ -1,5 +1,5 @@
 .picdetail {
-  height: 2200px;
+  height: 1100px;
 }
 
 .up {
@@ -13,10 +13,32 @@
 
 .up > img {
   height: 80%;
-  max-height: 500px;
+  max-height: 520px;
   width: auto;
 }
 
 .bottom {
-  height: 1000px;
+  margin-top: 50px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-right {
+  padding-left: 150px;
+  width: 50vw;
+  display: flex;
+}
+
+
+.bottom-left {
+  padding-left: 150px;
+  width: 50vw;
+  border-right: 1px solid grey;
+}
+
+.bottom-right img {
+  padding-right: 30px;
+  height: 100px;
+  width: auto;
 }

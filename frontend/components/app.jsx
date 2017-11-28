@@ -8,7 +8,7 @@ import PicDetailContainer from './picture/pic_detail_container';
 import PicAllContainer from './picture/pic_all_container';
 import UserProfileContainer from './user/user_profile_container';
 import UserProjectsContainer from './project/user_projects_container';
-// import ProjectDetailContainer from './project/project_detail_container';
+import ProjectDetailContainer from './project/project_detail_container';
 import Home from './home';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -21,6 +21,7 @@ const App = () => {
         <Route exact path="/pictures/:picId" component={PicDetailContainer} />
         <Route path="/pictures" component={PicAllContainer} />
         <ProtectedRoute exact path="/users/:userId" component={UserProfileContainer} />
+        <Route path="/projects/:projectId" component={ProjectDetailContainer} />
         <Route exact path="/users/:userId/projects" component={UserProjectsContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
@@ -34,4 +35,3 @@ const App = () => {
 };
 
 export default App;
-// <Route path="/projects/:projectId" component={ProjectDetailContainer} />

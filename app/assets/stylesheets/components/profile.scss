@@ -1,0 +1,25 @@
+.profile-background > img {
+  position: absolute;
+  clip: rect(400px, 2000px, 680px, 0px);
+  top: -335px;
+  z-index: 1000;
+}
+
+.profile-text {
+  position: absolute;
+  display: flex;
+  z-index: 1;
+}
+
+.profile-text {
+  height: 1000px;
+}
+
+.profile-background {
+  height: 2000px;
+}
+
+.profile-text img {
+  height: 200px;
+  width: 200px;
+}
