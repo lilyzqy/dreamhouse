@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import UserProjectsContainer from '../project/user_projects_container';
-import UserFavorites from '../project/user_favorites';
+import UserFavoritesContainer from '../favorite/user_favorites_container';
 
 class UserProfile extends React.Component {
   componentWillMount(){
@@ -22,9 +22,11 @@ class UserProfile extends React.Component {
 
         <Switch>
           <Route path="/users/:userId/projects" component={UserProjectsContainer} />
-          <Route path="users/:userId/favorites" component={UserFavorites} />
+          <Route path="users/:userId/favorites" component={UserFavoritesContainer} />
         </Switch>
       </div>
     );
   }
 }
+
+export default UserProfile;

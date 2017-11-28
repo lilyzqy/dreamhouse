@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectItems from './user_project_items';
+import values from 'lodash/values';
 
 class UserProjects extends React.Component {
   componentWillMount(){
@@ -7,15 +8,16 @@ class UserProjects extends React.Component {
   }
 
   render(){
-    let projects = this.props.projects;
+    let projects = values(this.props.projects);
+    let Projects = projects.map(project => <ProjectItems key={project.id} project={project} />);
     let user = this.props.user;
     return (
       <div>
         <div>
-          <h2>user.</h2>
+          <h2>Hi</h2>
         </div>
         <ul>
-          {projects.map(project => <ProjectItems key={project.id} project={project} />)}
+          {Projects}
         </ul>
       </div>
     );
