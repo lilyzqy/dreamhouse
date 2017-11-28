@@ -1,18 +1,22 @@
 .pics {
-  max-height: 350px;
-  max-width: 400px;
+  max-height: 400px;
+  // max-width: 400px;
   height: auto;
   width: auto;
   margin: 20px;
-  display: flex;
+  display: block;
+  position: relative;
 }
 
 .pics-index {
+  padding-left: 40px;
   margin: 40px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .inside-title {
-  margin-left: 60px;
+  margin-left: 100px;
   margin-top: 40px;
   font-family: $welcometext;
   color: $navy;
