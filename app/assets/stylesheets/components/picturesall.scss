@@ -1,5 +1,5 @@
 .pics {
-  max-height: 400px;
+  max-height: 470px;
   // max-width: 400px;
   height: auto;
   width: auto;
@@ -9,10 +9,9 @@
 }
 
 .pics-index {
-  padding-left: 40px;
-  margin: 40px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .inside-title {

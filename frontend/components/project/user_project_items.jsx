@@ -11,7 +11,7 @@ class ProjectItems extends React.Component {
       <li>
         <p>{project.title}</p>
         <Link to={`/projects/${project.id}`}>
-          <img src={project.cover_pic_url}></img>
+          <img className="pics" src={project.cover_pic_url}></img>
         </Link>
       </li>
     );

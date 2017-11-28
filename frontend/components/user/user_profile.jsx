@@ -10,6 +10,9 @@ class UserProfile extends React.Component {
 
   render(){
     let user = this.props.user;
+    if(!user){
+      return (<div></div>);
+    }
     return(
       <div>
         <div className="profile-background">

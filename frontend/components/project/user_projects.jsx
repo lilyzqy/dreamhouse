@@ -12,11 +12,11 @@ class UserProjects extends React.Component {
     let Projects = projects.map(project => <ProjectItems key={project.id} project={project} />);
     let user = this.props.user;
     return (
-      <div>
+      <div className="projects">
         <div>
           <h2>Hi</h2>
         </div>
-        <ul>
+        <ul className="pics-index">
           {Projects}
         </ul>
       </div>

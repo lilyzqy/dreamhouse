@@ -9,9 +9,9 @@ class Header extends React.Component {
 
 
   render(){
-    const {loggedIn, logout} = this.props;
+    const {loggedIn, logout, currentUser} = this.props;
     let Buttons = loggedIn ? (
-      <LoggedInNav logout={logout}/>
+      <LoggedInNav logout={logout} currentUser={currentUser}/>
     ):(
       <LoggedOutNav />
     );

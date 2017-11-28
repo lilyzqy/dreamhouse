@@ -13,8 +13,8 @@ class LoggedInNav extends React.Component {
 
   render(){
     let MyProfile = null;
-    if (this.props.location.pathname !== '/profile'){
-      MyProfile = (<Link to="/user/:userId" className='nav-button'>My Profile</Link>);
+    if (this.props.location.pathname !== `/users/${this.props.currentUser.id}`){
+      MyProfile = (<Link to={`/users/${this.props.currentUser.id}`} className='nav-button'>My Profile</Link>);
     }
     return (
       <div>
