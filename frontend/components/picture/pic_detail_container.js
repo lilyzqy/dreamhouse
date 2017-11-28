@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import { fetchUser } from '../../actions/user_actions';
 import { fetchPicture } from '../../actions/picture_actions';
 import PicDetail from './pic_detail';
 
@@ -9,6 +10,7 @@ const mapSTPs = (state,ownProps) => ({
 });
 
 const mapDTPs = dispatch => ({
+  fetchUser: (id) => dispatch(fetchUser(id)),
   fetchPicture: (id) => dispatch(fetchPicture(id))
 });
 

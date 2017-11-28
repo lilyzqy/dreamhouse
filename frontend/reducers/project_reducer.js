@@ -6,7 +6,7 @@ const projectReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PROJECTS:
-      return merge({}, state, action.projects);
+      return merge({}, action.projects);
     case RECEIVE_PROJECT:
       return merge({}, state, {[action.project.id]: action.project});
     case REMOVE_PROJECT:
