@@ -23,9 +23,8 @@ class NewProjectForm extends React.Component {
     return (e) => {
       e.preventDefault();
       const formProject = this.state;
-      console.log(this.props);
       this.props.createProject(formProject)
-      .then((project)=> this.props.history.push(`/profile/projects/${project.id}`));
+      .then((project)=> this.props.history.push(`/profile/projects/${project.id}`)).then(this.props.closeModal);
     };
   }
 

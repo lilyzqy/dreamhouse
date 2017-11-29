@@ -42,6 +42,9 @@ class LoginForm extends React.Component{
           <div className="session-button">
             <button type='sumbit' onClick={this.handleSubmit()}>Log In</button>
           </div>
+          <ul>
+            {this.props.errors}
+          </ul>
         </form>
       </div>
     );

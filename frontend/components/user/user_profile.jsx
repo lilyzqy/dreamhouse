@@ -52,7 +52,7 @@ class UserProfile extends React.Component {
           backDropClosesModal={ true }
           className={"modal-show"}
           overlayClassName={"model-background"}>
-          <NewProjectFormContainer />
+          <NewProjectFormContainer closeModal={this.closeModal()}/>
         </Modal>
         <Switch>
           <Route exact path="/profile/projects/:projectId/newPic" component={NewPictureFormContainer} />
