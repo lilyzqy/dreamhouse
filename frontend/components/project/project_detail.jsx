@@ -15,7 +15,7 @@ class ProjectDetail extends React.Component {
     .map(id => (<ProjectDetailItemsContainer id={id} />));
     return (
       <div>
-        <ul>
+        <ul className="pics-index">
           {items}
         </ul>
       </div>

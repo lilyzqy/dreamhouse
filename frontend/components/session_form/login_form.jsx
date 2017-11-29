@@ -9,24 +9,13 @@ class LoginForm extends React.Component{
       password: ''
     };
   }
-  //
-  // componentWillReceiveProps(nextProps) {
-  //   console.log('HELLO');
-  //   if (nextProps.loggedIn) {
-  //     if(this.props.location.pathname === '/home'){
-  //       this.props.history.push('/users/');
-  //     }
-  //     this.props.history.back();
-  //   }
-  // }
+
 
   handleSubmit(){
     return (e) => {
       e.preventDefault();
       const user = this.state;
-      this.props.login(user).then(()=>{
-        this.props.history.go(-4);
-      });
+      this.props.login(user);
     };
   }
 

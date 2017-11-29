@@ -12,7 +12,7 @@ class ProjectDetailItems extends React.Component {
     }
     return (
       <li>
-        <img src={pic.image_url}></img>
+        <img className="pics" src={pic.image_url}></img>
       </li>
     );
   }
