@@ -48,7 +48,7 @@ class UserProfile extends React.Component {
         </div>
         <Modal
           isOpen={ this.state.modalOn}
-          OnRequestClose={ this.closeModal()}
+          onRequestClose={ this.closeModal()}
           backDropClosesModal={ true }
           className={"modal-show"}
           overlayClassName={"model-background"}>

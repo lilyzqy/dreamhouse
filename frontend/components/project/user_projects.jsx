@@ -18,7 +18,6 @@ class UserProjects extends React.Component {
     return (
       <div className="projects">
         <div>
-          <h2>Hi</h2>
         </div>
         <ul className="pics-index">
           {Projects}

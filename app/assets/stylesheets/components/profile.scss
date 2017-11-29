@@ -5,6 +5,9 @@
   z-index: 0;
 }
 
+:focus {
+  outline: none;
+}
 .profile-text {
   margin-left: 140px;
   padding-bottom: 20px;
