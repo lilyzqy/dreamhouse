@@ -16,12 +16,12 @@ class Header extends React.Component {
       <LoggedOutNav />
     );
     let home = undefined;
-    if(this.props.location.pathname === '/home'){
+    if(this.props.location.pathname === '/'){
       home = 'home-nav';
     }
     return (
       <header className={`main-nav ${home}`}>
-        <Link to="/home" className="logo">
+        <Link to="/" className="logo">
           <p>Dreamhouse</p>
         </Link>
         <p className="search-bar"> </p>
