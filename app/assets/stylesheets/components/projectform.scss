@@ -1,10 +1,10 @@
 .project-form {
-  margin: 40px;
-  margin-left: 220px;
+  margin: 80px;
+  margin-left: 200px;
   height: 200px;
-  width: 60vw;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
 }
 
 .project-form input {
