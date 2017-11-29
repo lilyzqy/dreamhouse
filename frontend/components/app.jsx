@@ -17,7 +17,7 @@ const App = () => {
     <div>
       <HeaderContainer />
       <Switch>
-        <Route exact path="/home" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/pictures/:picId" component={PicDetailContainer} />
         <Route path="/pictures" component={PicAllContainer} />
         <ProtectedRoute path="/profile" component={UserProfileContainer} />

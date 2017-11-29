@@ -5,7 +5,7 @@ import values from 'lodash/values';
 class UserProjects extends React.Component {
   componentWillMount(){
     let id = this.props.match.params.userId;
-    if (this.props.match.path === '/profile/projects'){
+    if (this.props.match.path === '/profile'){
       id = this.props.currentUser.id;
     }
     this.props.fetchUserProjects(id);

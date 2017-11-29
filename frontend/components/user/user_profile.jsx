@@ -3,18 +3,36 @@ import { Route, Switch, Link } from 'react-router-dom';
 import UserProjectsContainer from '../project/user_projects_container';
 import UserFavoritesContainer from '../favorite/user_favorites_container';
 import NewProjectFormContainer from '../project/new_project_form_container';
+import NewPictureFormContainer from '../picture/new_picture_form_container';
+import ProjectDetailContainer from '../project/project_detail_container';
+import Modal from 'react-modal';
 
 class UserProfile extends React.Component {
-  componentWillMount(){
-    this.props.fetchUser(this.props.currentUser.id);
+  constructor(){
+    super();
+    this.state={
+      modalOn: false
+    };
   }
+
+  openModal() {
+    return ()=> this.setState({modalOn: true});
+  }
+
+  closeModal() {
+    return ()=> this.setState({modalOn: false});
+  }
+
+  // componentWillMount(){
+  //   this.props.fetchUser(this.props.currentUser.id);
+  // }
 
   render(){
     let currentUser = this.props.currentUser;
     let ProjectLink = undefined;
-    let AddProjectButton = undefined;
+    let AddButton = undefined;
     if (currentUser.designer === true){
-      AddProjectButton = (<Link to='/profile/projects/new' >Add New Project</Link>);
+      AddButton = <a onClick={this.openModal()}>Add New Project</a>;
     }
     return(
       <div>
@@ -25,12 +43,21 @@ class UserProfile extends React.Component {
               <img src={currentUser.image_url}></img>
               <h2>{currentUser.username}</h2>
             </div>
-            {AddProjectButton}
+            {AddButton}
           </div>
         </div>
+        <Modal
+          isOpen={ this.state.modalOn}
+          OnRequestClose={ this.closeModal()}
+          backDropClosesModal={ true }
+          className={"modal-show"}
+          overlayClassName={"model-background"}>
+          <NewProjectFormContainer />
+        </Modal>
         <Switch>
-          <Route path="/profile/projects/new" component={NewProjectFormContainer} />
-          <Route path="/profile/projects" component={UserProjectsContainer} />
+          <Route exact path="/profile/projects/:projectId/newPic" component={NewPictureFormContainer} />
+          <Route exact path="/profile/projects/:projectId" component={ProjectDetailContainer} />
+          <Route path="/profile" component={UserProjectsContainer} />
           <Route path="/profile/favorites" component={UserFavoritesContainer} />
         </Switch>
       </div>
@@ -39,6 +66,7 @@ class UserProfile extends React.Component {
 }
 
 export default UserProfile;
+// <Route exact path="/profile/projects/new" component={NewProjectFormContainer} />
 // <div>
 //   {ProjectLink}
 //   <Link to={`users/${currentUser.id}/projects`} >Projects</Link>

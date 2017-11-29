@@ -4,6 +4,7 @@ import { fetchProject } from '../../actions/project_actions';
 import ProjectDetail from './project_detail';
 
 const mapSTPs = (state, ownProps) => ({
+  currentUser: state.session.currentUser,
   project: state.entities.projects[ownProps.match.params.projectId]
 });
 //
