@@ -18,13 +18,14 @@ class NewProjectForm extends React.Component {
     };
   }
 
+
   handleSubmit(){
     return (e) => {
       e.preventDefault();
       const formProject = this.state;
       console.log(this.props);
       this.props.createProject(formProject)
-      .then(()=> this.props.history.push('/profile/projects'));
+      .then((project)=> this.props.history.push(`/profile/projects/${project.id}`));
     };
   }
 

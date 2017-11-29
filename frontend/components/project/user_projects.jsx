@@ -4,7 +4,11 @@ import values from 'lodash/values';
 
 class UserProjects extends React.Component {
   componentWillMount(){
-    this.props.fetchUserProjects(this.props.match.params.userId);
+    let id = this.props.match.params.userId;
+    if (this.props.match.path === '/profile/projects'){
+      id = this.props.currentUser.id;
+    }
+    this.props.fetchUserProjects(id);
   }
 
   render(){

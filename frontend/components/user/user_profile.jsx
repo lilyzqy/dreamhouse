@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import UserProjectsContainer from '../project/user_projects_container';
 import UserFavoritesContainer from '../favorite/user_favorites_container';
-import NewProjectFormContainer from '../project/new_project_form';
+import NewProjectFormContainer from '../project/new_project_form_container';
 
 class UserProfile extends React.Component {
   componentWillMount(){

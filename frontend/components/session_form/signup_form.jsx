@@ -12,15 +12,6 @@ class SignupForm extends React.Component{
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      if(this.props.history === '/home'){
-        this.props.history.push('/');
-      }
-      this.props.history.back();
-    }
-  }
-
   handleSubmit(){
     return (e) => {
       e.preventDefault();

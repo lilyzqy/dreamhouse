@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.image_url = "https://www.flickr.com/photos/19159227@N06/37874215174/in/pool-51035615908@N01"
+    @user.image_url = "https://images.unsplash.com/photo-1503595855261-9418f48a991a?auto=format&fit=crop&w=668&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
 
     if @user.save
       login!(@user)

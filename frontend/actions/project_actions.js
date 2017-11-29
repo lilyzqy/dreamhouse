@@ -11,7 +11,10 @@ export const fetchProject = (id) => dispatch => (
   APIUtil.fetchProject(id).then(project => dispatch(receiveProject(project)))
 );
 export const createProject = (formProject) => dispatch => (
-  APIUtil.createProject(formProject).then(project => dispatch(receiveProject(project)))
+  APIUtil.createProject(formProject).then((project) => {
+    dispatch(receiveProject(project));
+    return project;
+  })
 );
 export const deleteProject = (projectId) => dispatch => (
   APIUtil.deleteProject(projectId).then(project => dispatch(removeProject(projectId)))

@@ -9,7 +9,6 @@ import NewProjectForm from './new_project_form';
 // });
 
 const mapDTPs = dispatch => ({
-  debugger
   createProject: (formProject) => dispatch(createProject(formProject))
 });
 

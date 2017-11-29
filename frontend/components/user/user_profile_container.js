@@ -4,7 +4,6 @@ import { fetchUser } from '../../actions/user_actions';
 import UserProfile from './user_profile';
 
 const mapSTPs = (state,ownProps) => ({
-  user: state.entities.users[ownProps.match.params.userId],
   currentUser: state.session.currentUser
 });
 
