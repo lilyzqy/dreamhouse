@@ -7,14 +7,14 @@ class LoggedInNav extends React.Component {
   handleSubmit(){
     return (e)=>{
       e.preventDefault();
-      this.props.logout();
+      this.props.logout().then(()=>this.props.history.push('/login'));
     };
   }
 
   render(){
     let MyProfile = null;
     if (this.props.location.pathname !== `/users/${this.props.currentUser.id}`){
-      MyProfile = (<Link to={`/users/${this.props.currentUser.id}`} className='nav-button'>My Profile</Link>);
+      MyProfile = (<Link to={`/profile`} className='nav-button'>My Profile</Link>);
     }
     return (
       <div>

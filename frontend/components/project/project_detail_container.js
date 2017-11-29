@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import fetchProject from '../../actions/project_actions';
+import { fetchProject } from '../../actions/project_actions';
 import ProjectDetail from './project_detail';
 
 const mapSTPs = (state, ownProps) => ({

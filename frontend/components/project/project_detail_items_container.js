@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // import { withRouter } from 'react-router';
-import fetchPicture from '../../actions/picture_actions';
+import {fetchPicture} from '../../actions/picture_actions';
 import ProjectDetailItems from './project_detail_items';
 
 const mapSTPs = state => ({

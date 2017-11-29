@@ -10,8 +10,8 @@ export const fetchUserProjects = (userId) => dispatch => (
 export const fetchProject = (id) => dispatch => (
   APIUtil.fetchProject(id).then(project => dispatch(receiveProject(project)))
 );
-export const createProjects = (project) => dispatch => (
-  APIUtil.createProjects().then(projects => dispatch(receiveProject(project)))
+export const createProject = (formProject) => dispatch => (
+  APIUtil.createProject(formProject).then(project => dispatch(receiveProject(project)))
 );
 export const deleteProject = (projectId) => dispatch => (
   APIUtil.deleteProject(projectId).then(project => dispatch(removeProject(projectId)))
