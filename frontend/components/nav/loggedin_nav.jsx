@@ -7,7 +7,7 @@ class LoggedInNav extends React.Component {
   handleSubmit(){
     return (e)=>{
       e.preventDefault();
-      this.props.logout().then(()=>this.props.history.push('/login'));
+      this.props.logout().then(()=>this.props.history.push('/'));
     };
   }
 

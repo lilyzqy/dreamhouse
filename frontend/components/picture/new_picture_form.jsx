@@ -1,55 +1,74 @@
 import React from 'react';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
+
+const CLOUDINARY_UPLOAD_PRESET = 'dreamhousesf';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dreamhousesf/upload';
 
 class ImageUpload extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {file: '',imagePreviewUrl: ''};
-  }
 
-  _handleSubmit(e) {
-    e.preventDefault();
-    // TODO: do something with -> this.state.file
-    console.log('handle uploading-', this.state.file);
-  }
-
-  _handleImageChange(e) {
-    e.preventDefault();
-
-    let reader = new FileReader();
-    let file = e.target.files[0];
-
-    reader.onloadend = () => {
-      this.setState({
-        file: file,
-        imagePreviewUrl: reader.result
-      });
+    this.state = {
+      uploadedFileCloudinaryUrl: ''
     };
+  }
 
-    reader.readAsDataURL(file);
+  onImageDrop(files) {
+    debugger
+    this.setState({
+      uploadedFile: files[0]
+    });
+
+    this.handleImageUpload(files[0]);
+  }
+
+  handleImageUpload(file) {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+                        .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                        .field('file', file);
+
+    upload.end((err, response) => {
+      if (err) {
+        console.error(err);
+      }
+
+      if (response.body.secure_url !== '') {
+        this.setState({
+          uploadedFileCloudinaryUrl: response.body.secure_url
+        });
+      }
+    });
+  }
+
+  handleSubmit(){
+    return (e)=>{
+      e.preventDefault();
+      this.props.createPicture({image_url:this.state.uploadedFileCloudinaryUrl});
+    };
   }
 
   render() {
-    let {imagePreviewUrl} = this.state;
-    let $imagePreview = null;
-    if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} />);
-    } else {
-      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
-    }
-
-    return (
-      <div className="previewComponent">
-        <form onSubmit={(e)=>this._handleSubmit(e)}>
-          <input className="fileInput"
-            type="file"
-            onChange={(e)=>this._handleImageChange(e)} />
-          <button className="submitButton"
-            type="submit"
-            onClick={(e)=>this._handleSubmit(e)}>Upload Image</button>
+    return(
+      <div>
+        <form onSubmit={this.handleSubmit()}>
+          <div className="FileUpload">
+            <Dropzone
+              multiple={false}
+              accept="image/*"
+              onDrop={this.onImageDrop.bind(this)}>
+              <p>Drop an image or click to select a file to upload.</p>
+            </Dropzone>
+          </div>
+          <div>
+            {this.state.uploadedFileCloudinaryUrl === '' ? null :
+            <div>
+              <p>{this.state.uploadedFile.name}</p>
+              <img className="pic-preview" src={this.state.uploadedFileCloudinaryUrl} />
+            </div>}
+          </div>
+          <button type="submit" > Add Picutre </button>
         </form>
-        <div className="imgPreview">
-          {$imagePreview}
-        </div>
       </div>
     );
   }

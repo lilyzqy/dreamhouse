@@ -41,6 +41,10 @@
   font-family: $buttontext;
 }
 
+.nav-button:hover{
+  cursor: pointer;
+}
+
 .right-nav {
   width: 180px;
   display: flex;

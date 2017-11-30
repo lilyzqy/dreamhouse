@@ -17,9 +17,10 @@ class UserProjects extends React.Component {
     let user = this.props.user;
     return (
       <div className="projects">
-        <div>
+        <div className="project-gallary">
+          Project Gallary
         </div>
-        <ul className="pics-index">
+        <ul className="project-index">
           {Projects}
         </ul>
       </div>

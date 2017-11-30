@@ -17,14 +17,12 @@ const App = () => {
     <div>
       <HeaderContainer />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <AuthRoute exact path="/" component={Home} />
         <Route exact path="/pictures/:picId" component={PicDetailContainer} />
         <Route path="/pictures" component={PicAllContainer} />
         <ProtectedRoute path="/profile" component={UserProfileContainer} />
         <Route path="/projects/:projectId" component={ProjectDetailContainer} />
         <Route exact path="/users/:userId/projects" component={UserProjectsContainer} />
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
       </Switch>
 
       <footer>
@@ -35,3 +33,8 @@ const App = () => {
 };
 
 export default App;
+
+
+
+// <AuthRoute path="/login" component={LoginFormContainer} />
+// <AuthRoute path="/signup" component={SignupFormContainer} />
