@@ -23,10 +23,6 @@ class UserProfile extends React.Component {
     return ()=> this.setState({modalOn: false});
   }
 
-  // componentWillMount(){
-  //   this.props.fetchUser(this.props.currentUser.id);
-  // }
-
   render(){
     let currentUser = this.props.currentUser;
     let ProjectLink = undefined;
