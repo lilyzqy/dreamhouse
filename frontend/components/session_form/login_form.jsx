@@ -27,6 +27,10 @@ class LoginForm extends React.Component{
     };
   }
 
+  loginDemoUser(){
+    return ()=> this.props.login({email:"racheal@gmail.com", password:"password"});
+  }
+
   render(){
     return (
       <form className='session-form login'>
@@ -35,6 +39,9 @@ class LoginForm extends React.Component{
           <input placeholder="Password" type='password' onChange={this.handleChange('password')}></input>
         <div className="session-button">
           <button type='sumbit' onClick={this.handleSubmit()}>Log In</button>
+        </div>
+        <div>
+          <button onClick={this.loginDemoUser()}>Demo</button>
         </div>
         <div>
           <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
