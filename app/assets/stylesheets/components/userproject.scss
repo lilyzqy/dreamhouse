@@ -1,11 +1,12 @@
 .projects {
+  margin-left: 150px;
   margin-top: 70px;
 }
 
 .project-cover {
   // position: absolute;
   height: 700px;
-  clip: rect(0,400px,400px,0px)
+  clip: rect(0,350px,350px,0px)
 }
 
 .project-gallary {
@@ -17,13 +18,14 @@
 .frame{
   overflow: hidden;
   // position: relative;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
 }
 
 .polaroid{
+  text-decoration: none;
   text-align: center;
-  width: 400px;
+  width: 350px;
 }
 
 .note{
@@ -38,7 +40,6 @@
   padding: 10px;
   z-index: 1000;
   // align-items: flex-end;
-  text-decoration: none;
   font-size: 18px;
   color: grey;
 }
@@ -54,4 +55,9 @@
 .project-item{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 30px;
+}
+
+.project-item p {
+  color: grey;
+  margin: 5px;
 }

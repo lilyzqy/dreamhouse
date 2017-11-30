@@ -15,7 +15,6 @@ class ImageUpload extends React.Component {
   }
 
   onImageDrop(files) {
-    debugger
     this.setState({
       uploadedFile: files[0]
     });

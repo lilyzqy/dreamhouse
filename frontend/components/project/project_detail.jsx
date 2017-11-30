@@ -1,8 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProjectDetailItemsContainer from './project_detail_items_container';
+import Modal from 'react-modal';
+import NewPictureFormContainer from '../picture/new_picture_form_container';
 
 class ProjectDetail extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      modalOn: false
+    };
+  }
+
+  openModal() {
+   return()=> this.setState({modalOn: true});
+  }
+
+  closeModal() {
+    return ()=> this.setState({modalOn: false});
+  }
+
   componentWillMount(){
     this.props.fetchProject(this.props.match.params.projectId);
   }
@@ -14,7 +31,7 @@ class ProjectDetail extends React.Component {
     }
     let link;
     if(this.props.currentUser && this.props.currentUser.id === project.user_id){
-      link = <Link to={`/profile/projects/${project.id}/newPic`} >Add New Picture To the Project</Link>;
+      link = <a className="addPic" onClick={this.openModal()}>Add New Picture To the Project</a>;
     }
     let items = project.project_pics_id
     .map(id => (<ProjectDetailItemsContainer key={id} id={id} />));
@@ -25,9 +42,18 @@ class ProjectDetail extends React.Component {
         <ul className="pics-index">
           {items}
         </ul>
+        <Modal
+          isOpen={ this.state.modalOn}
+          onRequestClose={ this.closeModal()}
+          backDropClosesModal={ true }
+          className={"modal-show"}
+          overlayClassName={"model-background"}>
+          <NewPictureFormContainer closeModal={this.closeModal}/>
+        </Modal>
       </div>
     );
   }
 }
 
 export default ProjectDetail;
+// link = <Link to={`/profile/projects/${project.id}/newPic`} >Add New Picture To the Project</Link>;

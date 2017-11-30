@@ -13,9 +13,9 @@
  */
 
 
+ @import "base/font.scss";
+ @import "base/color.scss";
 @import "base/reset.scss";
 @import "base/layout.scss";
-@import "base/font.scss";
-@import "base/color.scss";
 
 @import "components/*";

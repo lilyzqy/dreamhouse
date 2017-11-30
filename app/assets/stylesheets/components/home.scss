@@ -13,7 +13,6 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  font-family: $welcometext;
   flex-direction: column;
   align-items: center;
   color: $navy;
@@ -27,10 +26,11 @@
 
 .inspire {
   font-size: 48px;
-
+  // font-family: $welcometext;
 }
 
 .home-text > p {
+  font-family: $welcometext;
   margin-bottom: 5px;
 }
 
@@ -49,6 +49,7 @@
 .hero-pic {
   clip: rect(200px, 2000px, 1000px, 0px);
   top: -200px;
+  width: 100%;
 }
 
 .explorelink > a {

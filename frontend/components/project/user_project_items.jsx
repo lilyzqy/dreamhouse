@@ -16,7 +16,7 @@ class ProjectItems extends React.Component {
     return(
       <li className="project-item">
         <p>{title}</p>
-        <Link className="polaroid" to={`/projects/${project.id}`}>
+        <Link className="polaroid" to={`/profile/projects/${project.id}`}>
           <div className="frame">
             <img className="project-cover" src={project.cover_pic_url}></img>
           </div>
