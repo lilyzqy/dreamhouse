@@ -12,13 +12,17 @@ class UserProjects extends React.Component {
   }
 
   render(){
+    let text="Project Gallary";
     let projects = values(this.props.projects);
     let Projects = projects.map(project => <ProjectItems key={project.id} project={project} />);
     let user = this.props.user;
+    if (this.props.match.path === '/profile'){
+      text = "";
+    }
     return (
       <div className="projects">
         <div className="project-gallary">
-          Project Gallary
+          {text}
         </div>
         <ul className="project-index">
           {Projects}

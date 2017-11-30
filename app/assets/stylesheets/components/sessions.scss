@@ -17,7 +17,6 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  width: 230px;
 }
 
 
@@ -28,16 +27,22 @@
   border: 1px solid #00113a;
 }
 
-.session-form > * {
+.login > * {
   margin-bottom: 40px;
 }
 
+.signup > * {
+  margin-bottom: 20px;
+}
+
 .session-button, #session-check{
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-self: center;
 }
 .session-button >button {
+  font-size: 14px;
   border: 1px solid #00113a;
   padding: 2px 5px 2px 5px;
 }

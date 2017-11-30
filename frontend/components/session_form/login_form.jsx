@@ -29,7 +29,7 @@ class LoginForm extends React.Component{
 
   render(){
     return (
-      <form className='session-form'>
+      <form className='session-form login'>
         <h1>Log In</h1>
           <input placeholder="Email" type='text' onChange={this.handleChange('email')}></input>
           <input placeholder="Password" type='password' onChange={this.handleChange('password')}></input>
