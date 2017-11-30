@@ -38,30 +38,21 @@ class SignupForm extends React.Component{
 
   render(){
     return (
-      <div className='session-page'>
-        <img src= "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?auto=format&fit=crop&w=800&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"></img>
-        <form className='session-form'>
-          <h1>Sign up</h1>
-          <label>Username:
-            <input type='text' onChange={this.handleChange('username')}></input>
-          </label>
-          <label>Email:
-            <input type='text' onChange={this.handleChange('email')}></input>
-          </label>
-          <label>Password:
-            <input type='password' onChange={this.handleChange('password')}></input>
-          </label>
-          <label htmlFor="designerCheck" id="session-check">
-            <input type="checkbox" id="designerCheck" onChange={this.handleCheck()} checked={this.state.designer}></input>
-            I'm a designer</label>
-          <div className="session-button">
-            <button type='sumbit' onClick={this.handleSubmit()}>Sign Up</button>
-          </div>
-          <ul>
-            {this.props.errors}
-          </ul>
-        </form>
-      </div>
+      <form className='session-form'>
+        <h1>Sign up</h1>
+          <input placeholder="Username" type='text' onChange={this.handleChange('username')}></input>
+          <input placeholder="Email" type='text' onChange={this.handleChange('email')}></input>
+          <input placeholder="Password" type='password' onChange={this.handleChange('password')}></input>
+        <label htmlFor="designerCheck" id="session-check">
+          <input type="checkbox" id="designerCheck" onChange={this.handleCheck()} checked={this.state.designer}></input>
+          I'm a designer</label>
+        <div className="session-button">
+          <button type='sumbit' onClick={this.handleSubmit()}>Sign Up</button>
+        </div>
+        <ul>
+          {this.props.errors[0]}
+        </ul>
+      </form>
     );
   }
 

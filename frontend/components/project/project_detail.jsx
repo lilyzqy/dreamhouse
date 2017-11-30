@@ -14,7 +14,7 @@ class ProjectDetail extends React.Component {
     }
     let link;
     if(this.props.currentUser && this.props.currentUser.id === project.user_id){
-      link = <Link to="/profile/projects/:projectId/newPic" >Add New Picture To the Project</Link>;
+      link = <Link to={`/profile/projects/${project.id}/newPic`} >Add New Picture To the Project</Link>;
     }
     let items = project.project_pics_id
     .map(id => (<ProjectDetailItemsContainer key={id} id={id} />));
