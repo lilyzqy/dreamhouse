@@ -8,6 +8,11 @@
   position: relative;
 }
 
+.pics:hover {
+  color: rgb(17, 17, 17);
+  // opacity: 0.5;
+}
+
 .pics-index {
   display: flex;
   flex-wrap: wrap;

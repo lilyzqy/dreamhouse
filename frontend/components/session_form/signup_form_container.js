@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import SignupForm from './signup_form';
+import { clearError } from '../../actions/error_actions';
 
 import { signup } from '../../actions/session_actions';
 
@@ -14,7 +15,8 @@ const mapSTPs = (state) => {
 
 const mapDTPs = (dispatch) =>{
   return {
-    signup: formUser => dispatch(signup(formUser)),
+    clearError: () => dispatch(clearError()),
+    signup: formUser => dispatch(signup(formUser))
   };
 };
 

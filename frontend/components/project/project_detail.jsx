@@ -21,7 +21,7 @@ class ProjectDetail extends React.Component {
   }
 
   componentWillMount(){
-    this.props.fetchProject(this.props.match.params.projectId);
+    this.props.fetchProject(this.props.match.params.projectId).then(this.props.fetchPictures());
   }
 
   render(){
@@ -48,7 +48,7 @@ class ProjectDetail extends React.Component {
           backDropClosesModal={ true }
           className={"modal-show"}
           overlayClassName={"model-background"}>
-          <NewPictureFormContainer closeModal={this.closeModal}/>
+          <NewPictureFormContainer closeModal={this.closeModal.bind(this)}/>
         </Modal>
       </div>
     );

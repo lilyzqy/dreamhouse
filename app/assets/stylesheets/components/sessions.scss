@@ -28,7 +28,7 @@
 }
 
 .login > * {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .signup > * {
@@ -36,7 +36,7 @@
 }
 
 .session-button, #session-check{
-  // width: 100%;
+  align-items: center;
   display: flex;
   justify-content: flex-end;
   align-self: center;

@@ -10,6 +10,10 @@ class LoginForm extends React.Component{
     };
   }
 
+  componentWillUnmount(){
+    this.props.clearError();
+  }
+
 
   handleSubmit(){
     return (e) => {
@@ -32,6 +36,13 @@ class LoginForm extends React.Component{
   }
 
   render(){
+    let err;
+    if(this.props.errors.length !== 0){
+      err = (<div>
+        <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+        {this.props.errors[0]}
+      </div>);
+    }
     return (
       <form className='session-form login'>
         <h1>Log In</h1>
@@ -43,10 +54,7 @@ class LoginForm extends React.Component{
         <div>
           <button onClick={this.loginDemoUser()}>Demo</button>
         </div>
-        <div>
-          <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
-          {this.props.errors[0]}
-        </div>
+        {err}
       </form>
     );
   }

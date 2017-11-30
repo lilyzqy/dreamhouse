@@ -1,5 +1,5 @@
 export const CLEAR_ERROR = 'CLEAR_ERROR';
 
-const clearError = ()=>({
+export const clearError = ()=>({
   type:CLEAR_ERROR
 });

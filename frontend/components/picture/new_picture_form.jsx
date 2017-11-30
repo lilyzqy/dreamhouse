@@ -10,8 +10,13 @@ class ImageUpload extends React.Component {
     super(props);
 
     this.state = {
-      uploadedFileCloudinaryUrl: ''
+      uploadedFileCloudinaryUrl: '',
+      err:[]
     };
+  }
+
+  componentWillReceiveProps(newProps){
+    console.log(newProps);
   }
 
   onImageDrop(files) {
@@ -29,7 +34,8 @@ class ImageUpload extends React.Component {
 
     upload.end((err, response) => {
       if (err) {
-        console.error(err);
+        console.log(err);
+        this.setState({err:err});
       }
 
       if (response.body.secure_url !== '') {
@@ -43,14 +49,21 @@ class ImageUpload extends React.Component {
   handleSubmit(){
     return (e)=>{
       e.preventDefault();
-      this.props.createPicture({image_url:this.state.uploadedFileCloudinaryUrl});
+      this.props.createPicture(this.props.match.params.projectId,
+        {image_url:this.state.uploadedFileCloudinaryUrl})
+        .then(this.props.closeModal())
+        .then(this.fetchPictures);
     };
   }
 
   render() {
+    let err;
+    if (this.state.err){
+      err = this.state.err;
+    }
     return(
       <div>
-        <form onSubmit={this.handleSubmit()}>
+        <form className="new-pic-form"onSubmit={this.handleSubmit()}>
           <div className="FileUpload">
             <Dropzone
               multiple={false}
@@ -61,12 +74,13 @@ class ImageUpload extends React.Component {
           </div>
           <div>
             {this.state.uploadedFileCloudinaryUrl === '' ? null :
-            <div>
-              <p>{this.state.uploadedFile.name}</p>
+            <div className="loaded">
               <img className="pic-preview" src={this.state.uploadedFileCloudinaryUrl} />
+              <p>{this.state.uploadedFile.name}</p>
+              <button type="submit" > Add Picutre </button>
+              <p>{err}</p>
             </div>}
           </div>
-          <button type="submit" > Add Picutre </button>
         </form>
       </div>
     );

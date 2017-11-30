@@ -12,6 +12,10 @@ class SignupForm extends React.Component{
     };
   }
 
+  componentWillUnmount(){
+    this.props.clearError();
+  }
+
   handleSubmit(){
     return (e) => {
       e.preventDefault();
@@ -37,6 +41,13 @@ class SignupForm extends React.Component{
   }
 
   render(){
+    let err;
+    if(this.props.errors.length !== 0){
+      err = (<div>
+        <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+        {this.props.errors[0]}
+      </div>);
+    }
     return (
       <form className='session-form signup'>
         <h1>Sign up</h1>
@@ -49,9 +60,7 @@ class SignupForm extends React.Component{
         <div className="session-button">
           <button type='sumbit' onClick={this.handleSubmit()}>Sign Up</button>
         </div>
-        <ul>
-          {this.props.errors[0]}
-        </ul>
+        {err}
       </form>
     );
   }

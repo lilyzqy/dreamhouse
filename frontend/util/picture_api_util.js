@@ -22,7 +22,7 @@ export const deletePicture = (id) => {
 export const createPicture = (projectId, picture) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/project/${projectId}/pictures`,
+    url: `/api/projects/${projectId}/pictures`,
     data: {picture}
   });
 };
