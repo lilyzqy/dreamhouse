@@ -11,6 +11,15 @@ class PicDetail extends React.Component {
     });
   }
 
+  handleClick(type){
+    return ()=>{
+      if (type === "favorite"){
+        this.props.createFavorite(this.props.picture.id);
+      }else{
+        this.props.deleteFavorite(this.props.picture.id);
+      }
+    };
+  }
 
   render(){
     const pic = this.props.picture;
@@ -22,10 +31,22 @@ class PicDetail extends React.Component {
     if(!user || !project){
       return (<div></div>);
     }
+    let type = 'favorite';
+    let heartType = "fa-heart-o";
+    if(pic.favorited_by_current_user){
+      type = "unfavorite";
+      heartType = "fa-heart";
+    }
     return (
       <div className="picdetail">
         <div className='up'>
           <img src={pic.image_url}></img>
+          <div className="pic-bottom">
+            <i className="fa fa-expand" aria-hidden="true"></i>
+            <a className="like-button" onClick={this.handleClick(type)}>
+              <i className={`fa ${heartType}`} aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
         <div className='bottom'>
           <div className='bottom-left'>

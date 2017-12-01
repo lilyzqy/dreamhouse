@@ -1,6 +1,7 @@
 import React from 'react';
 import values from 'lodash/values';
-import { Link } from 'react-router-dom';
+
+import PicAllItems from './pic_all_items';
 
 class PicAll extends React.Component {
   componentWillMount(){
@@ -10,11 +11,9 @@ class PicAll extends React.Component {
   render(){
     const pics = values(this.props.pictures);
     const Pics = pics.map(pic => (
-      <li className="pic-item-li">
-        <Link to={`/pictures/${pic.id}`}>
-          <img className="pics" src={pic.image_url}></img>
-        </Link>
-      </li>
+      <PicAllItems key= {pic.id} pic={pic}
+        createFavorite={this.props.createFavorite}
+        deleteFavorite={this.props.deleteFavorite} />
     ));
     if(!pics){
       return (<div>no</div>);
