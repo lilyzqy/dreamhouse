@@ -27,7 +27,8 @@ class UserProfile extends React.Component {
     let currentUser = this.props.currentUser;
     let ProjectLink = undefined;
     let AddButton = undefined;
-    if (currentUser.designer === true){
+    console.log(this.props);
+    if (currentUser.designer === true && this.props.match.path === '/profile/projects'){
       AddButton = <a onClick={this.openModal()}>Add New Project</a>;
     }
     return(
@@ -53,8 +54,8 @@ class UserProfile extends React.Component {
         <Switch>
           <Route exact path="/profile/projects/:projectId/newPic" component={NewPictureFormContainer} />
           <Route exact path="/profile/projects/:projectId" component={ProjectDetailContainer} />
+          <Route exact path="/profile/favorites" component={UserFavoritesContainer} />
           <Route path="/profile" component={UserProjectsContainer} />
-          <Route path="/profile/favorites" component={UserFavoritesContainer} />
         </Switch>
       </div>
     );
