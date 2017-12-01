@@ -8,5 +8,11 @@ class Picture < ApplicationRecord
 
   delegate :user, to: :project
 
+  has_many :favorites,
+  class_name: :Favorite,
+  primary_key: :id,
+  foreign_key: :picture_id
+
+  
 
 end

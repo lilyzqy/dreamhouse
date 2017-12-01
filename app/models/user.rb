@@ -16,6 +16,16 @@ class User < ApplicationRecord
   through: :projects,
   source: :pictures
 
+  has_many :favorites,
+  class_name: :Favorite,
+  primary_key: :id,
+  foreign_key: :user_id
+
+  has_many :favorited_pictures,
+  through: :favorites,
+  source: :picture
+
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user && user.is_password?(password)
