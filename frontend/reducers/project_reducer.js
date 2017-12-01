@@ -6,10 +6,16 @@ const projectReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PIC:
-      const currentPics = state[action.picture.project_id].project_pics_id;
-      const newPic = action.picture.id;
-      let newState = { [action.picture.project_id]: {project_pics_id: currentPics.concat(newPic)}};
-      return merge({}, state, newState);
+      let currentPics;
+      let newPic;
+      let newState;
+      if(state[action.picture.project_id]){
+        currentPics = state[action.picture.project_id].project_pics_id;
+        newPic = action.picture.id;
+        newState = { [action.picture.project_id]: {project_pics_id: currentPics.concat(newPic)}};
+        return merge({}, state, newState);
+      }
+      return state;
     case RECEIVE_PROJECTS:
       return merge({}, action.projects);
     case RECEIVE_PROJECT:

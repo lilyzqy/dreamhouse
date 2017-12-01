@@ -10,13 +10,15 @@ class ProjectItems extends React.Component {
       return (<div></div>);
     }
     let title = "";
+    let to = `/projects/${project.id}`;
     if (this.props.match.path === '/profile'){
       title = project.title;
+      to = `/profile/projects/${project.id}`;
     }
     return(
       <li className="project-item">
         <p>{title}</p>
-        <Link className="polaroid" to={`/profile/projects/${project.id}`}>
+        <Link className="polaroid" to={to}>
           <div className="frame">
             <img className="project-cover" src={project.cover_pic_url}></img>
           </div>

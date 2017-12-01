@@ -31,7 +31,9 @@ class ProjectDetail extends React.Component {
     }
     let link;
     if(this.props.currentUser && this.props.currentUser.id === project.user_id){
-      link = <a className="addPic" onClick={this.openModal()}>Add New Picture To the Project</a>;
+      link = <a className="addPic" onClick={this.openModal()}>
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        Add New Picture To the Project</a>;
     }
     let items = project.project_pics_id
     .map(id => (<ProjectDetailItemsContainer key={id} id={id} />));

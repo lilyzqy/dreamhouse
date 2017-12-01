@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // import { withRouter } from 'react-router';
-import {fetchPicture} from '../../actions/picture_actions';
+import { fetchPicture, deletePicture } from '../../actions/picture_actions';
 import ProjectDetailItems from './project_detail_items';
 
 const mapSTPs = state => ({
@@ -8,6 +8,7 @@ const mapSTPs = state => ({
 });
 //
 const mapDTPs = dispatch => ({
+  deletePicture: (picId) => dispatch(deletePicture(picId)),
   fetchPicture: (picId) => dispatch(fetchPicture(picId))
 });
 

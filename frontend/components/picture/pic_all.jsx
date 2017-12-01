@@ -10,7 +10,7 @@ class PicAll extends React.Component {
   render(){
     const pics = values(this.props.pictures);
     const Pics = pics.map(pic => (
-      <li>
+      <li className="pic-item-li">
         <Link to={`/pictures/${pic.id}`}>
           <img className="pics" src={pic.image_url}></img>
         </Link>
