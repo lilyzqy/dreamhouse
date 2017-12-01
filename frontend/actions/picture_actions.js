@@ -14,7 +14,7 @@ export const receivePic = picture => ({
   picture
 });
 
-const removePic = picId =>({
+export const removePic = picId =>({
   type: REMOVE_PIC,
   picId
 });

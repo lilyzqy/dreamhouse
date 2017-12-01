@@ -27,8 +27,7 @@ class UserProfile extends React.Component {
     let currentUser = this.props.currentUser;
     let ProjectLink = undefined;
     let AddButton = undefined;
-    console.log(this.props);
-    if (currentUser.designer === true && this.props.match.path === '/profile/projects'){
+    if (currentUser.designer === true && this.props.location.pathname === '/profile/projects'){
       AddButton = <a onClick={this.openModal()}>Add New Project</a>;
     }
     return(
