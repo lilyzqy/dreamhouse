@@ -9,14 +9,17 @@ class ProjectItems extends React.Component {
     if(!project.cover_pic_url){
       return (<div></div>);
     }
+    let hide;
     let title = "";
     let to = `/projects/${project.id}`;
     if (this.props.match.path === '/profile'){
       title = project.title;
       to = `/profile/projects/${project.id}`;
+    }else if(project.project_pics_id.length === 0 ){
+      hide = "hide";
     }
     return(
-      <li className="project-item">
+      <li className={`project-item ${hide}`}>
         <p>{title}</p>
         <Link className="polaroid" to={to}>
           <div className="frame">
