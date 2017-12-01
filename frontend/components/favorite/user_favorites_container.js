@@ -6,8 +6,8 @@ import { deleteFavorite } from '../../actions/favorite_actions';
 import Favorites from './user_favorites';
 
 const mapSTPs = (state,ownProps) => ({
-  pictures: state.entities.pictures
-  // user: state.entities.users[ownProps.match.params.userId]
+  pictures: state.entities.pictures,
+  currentUser: state.session.currentUser
 });
 
 const mapDTPs = dispatch => ({

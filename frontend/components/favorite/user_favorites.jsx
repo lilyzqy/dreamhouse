@@ -11,15 +11,6 @@ class Favorites extends React.Component {
 
   render(){
     const pics = values(this.props.pictures);
-    let Text;
-    console.log(pics);
-    if(pics === []){
-      Text =()=> (<p>
-        <Link to='/pictures' >
-          <h2>You don't have any collection yet. Lets Go and explore!</h2>
-        </Link>
-      </p>);
-    }
     const Pics = pics.map(pic => (
       <FavoriteItems key= {pic.id} pic={pic}
         deleteFavorite={this.props.deleteFavorite}
@@ -28,13 +19,16 @@ class Favorites extends React.Component {
     if(!pics){
       return (<div>no</div>);
     }
+    let link;
+    if(this.props.currentUser.designer){
+      link = <Link to="/profile/projects" >My Projects</Link>;
+    }
     return (
       <div>
         <div className="fav-title">
           <h2>My Favorites</h2>
-          <Link to="/profile/projects" >My Projects</Link>
+          {link}
         </div>
-        {Text}
         <ul className= "pics-index">
           {Pics}
         </ul>
