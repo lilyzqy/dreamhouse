@@ -1,6 +1,6 @@
 .project-form {
   margin: 80px;
-  margin-left: 200px;
+  // margin-left: 200px;
   height: 200px;
   display: flex;
   justify-content: space-around;
@@ -8,13 +8,9 @@
 }
 
 .project-form input {
-  margin-left: 5px;
+  text-align: center;
   border: 1px solid grey;
   height: 25px;
-}
-
-.project-form label {
-  font-size: 18px;
 }
 
 .project-form button {

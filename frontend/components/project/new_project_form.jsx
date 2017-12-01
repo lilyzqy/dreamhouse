@@ -32,15 +32,9 @@ class NewProjectForm extends React.Component {
     return (
       <div>
         <form className="project-form">
-          <label>Title:
-            <input onChange={this.handleChange('title')}></input>
-          </label><br/>
-          <label>State:
-            <input onChange={this.handleChange('state')}></input>
-          </label><br/>
-          <label>City:
-            <input onChange={this.handleChange('city')}></input>
-          </label><br/>
+            <input placeholder="title" onChange={this.handleChange('title')}></input>
+            <input placeholder="state" onChange={this.handleChange('state')}></input>
+            <input placeholder="city" onChange={this.handleChange('city')}></input>
           <button type="submit" onClick={this.handleSubmit()}>Create Project</button>
         </form>
       </div>
