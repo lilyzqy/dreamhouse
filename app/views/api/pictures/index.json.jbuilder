@@ -1,5 +1,5 @@
 @pictures.each do |picture|
   json.set! picture.id do
-    json.extract! picture, :id, :image_url
+    json.partial! 'api/pictures/picture', picture: picture
   end
 end
