@@ -50,7 +50,25 @@
   color: white;
   font-size: 25px;
   z-index: 1;
+  padding: 10px;
 }
+
+.fa-heart::before {
+  color: $red;
+  font-size: 25px;
+  z-index: 1;
+  padding: 10px;
+}
+
+.like-button{
+  // color: transpa
+}
+//
+// .red {
+//   color: red;
+//   font-size: 25px;
+//   z-index: 1;
+// }
 
 .close {
   position: absolute;

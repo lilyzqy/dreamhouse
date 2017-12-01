@@ -38,11 +38,11 @@ class ProjectDetail extends React.Component {
     if(this.props.currentUser && this.props.currentUser.id === project.user_id){
       link =
         <a className="addPic" onClick={this.openModal()}>
-        <i class="fa fa-plus" aria-hidden="true"></i>
+        <i className="fa fa-plus" aria-hidden="true"></i>
         Add New Picture To the Project</a>;
       deleteLink =
         <a onClick={this.handleClick(project.id)}>
-        <i class="fa fa-trash" aria-hidden="true"></i>
+        <i className="fa fa-trash" aria-hidden="true"></i>
         Delete This Project</a>;
     }
     let items = project.project_pics_id

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :pictures, only: [ :create]
     end
     resources :pictures, only: [:index, :show, :destroy] do
-      resources :favorites, only: [:create, :destroy]
+      resource :favorite, only: [:create, :destroy]
       get 'current_user_favorited_pictures', on: :collection
     end
 

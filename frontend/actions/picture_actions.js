@@ -9,7 +9,7 @@ const receivePics = pictures => ({
   pictures
 });
 
-const receivePic = picture => ({
+export const receivePic = picture => ({
   type: RECEIVE_PIC,
   picture
 });

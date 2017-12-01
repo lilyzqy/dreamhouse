@@ -12,6 +12,9 @@ const projectReducer = (state = {}, action) => {
       if(state[action.picture.project_id]){
         currentPics = state[action.picture.project_id].project_pics_id;
         newPic = action.picture.id;
+        if(currentPics.includes(newPic)){
+          return state;
+        }
         newState = { [action.picture.project_id]: {project_pics_id: currentPics.concat(newPic)}};
         return merge({}, state, newState);
       }

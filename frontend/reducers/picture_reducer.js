@@ -6,7 +6,7 @@ const pictureReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PICS:
-      return merge({},state, action.pictures);
+      return action.pictures;
     case RECEIVE_PIC:
       return merge({},state,{[action.picture.id]:action.picture});
     case REMOVE_PIC:
