@@ -26,3 +26,10 @@ export const createPicture = (projectId, picture) => {
     data: {picture}
   });
 };
+
+export const fetchUserFavoritedPictures = () => {
+  return $.ajax({
+    method: 'GET',
+    url:'/api/pictures/current_user_favorited_pictures'
+  });
+};

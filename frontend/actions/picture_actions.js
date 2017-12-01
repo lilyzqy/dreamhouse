@@ -19,6 +19,10 @@ const removePic = picId =>({
   picId
 });
 
+export const fetchUserFavoritedPictures = () => dispatch => (
+  APIUtil.fetchUserFavoritedPictures().then(pictures => dispatch(receivePics(pictures)))
+);
+
 export const fetchPictures = () => dispatch =>(
   APIUtil.fetchPictures().then(pictures => dispatch(receivePics(pictures)))
 );

@@ -1,6 +1,12 @@
 class Api::PicturesController < ApplicationController
   before_action :require_logged_in, only: [:create, :destroy]
 
+  def current_user_favorited_pictures
+    @pictures = current_user.favorited_pictures
+    render :index
+  end
+
+
   def index
     @pictures = Picture.all
   end
