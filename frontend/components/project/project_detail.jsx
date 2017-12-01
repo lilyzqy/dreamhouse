@@ -24,6 +24,10 @@ class ProjectDetail extends React.Component {
     this.props.fetchProject(this.props.match.params.projectId).then(this.props.fetchPictures());
   }
 
+  handleClick(id){
+    return ()=> this.props.deleteProject(id).then(()=>this.props.history.push('/profile/projects'));
+  }
+
   render(){
     let project = this.props.project;
     if(!project){
@@ -39,7 +43,12 @@ class ProjectDetail extends React.Component {
     .map(id => (<ProjectDetailItemsContainer key={id} id={id} />));
     return (
       <div>
-        <h2 className="location">{project.city} {project.state}</h2>
+        <h2 className="projecr-detail-title">
+          <p className="location">{project.city} {project.state}</p>
+          <a onClick={this.handleClick(project.id)}>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            Delete This Project</a>
+        </h2>
         {link}
         <ul className="pics-index">
           {items}

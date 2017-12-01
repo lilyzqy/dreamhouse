@@ -4,8 +4,7 @@
 }
 
 .location {
-  margin-left: 180px;
-  margin-top: 60px;
+
   color: grey;
 }
 
@@ -13,5 +12,22 @@
   margin-left: 180px;
 }
 .addPic:hover {
+  cursor: pointer;
+}
+
+.projecr-detail-title {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 180px;
+  margin-top: 60px;
+  margin-right: 160px;
+  color: grey;
+}
+
+.fa-trash {
+  margin-right: 5px;
+}
+
+.projecr-detail-title > a:hover{
   cursor: pointer;
 }
