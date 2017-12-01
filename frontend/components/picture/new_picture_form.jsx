@@ -30,7 +30,6 @@ class ImageUpload extends React.Component {
 
     upload.end((err, response) => {
       if (err) {
-        console.log(err);
         this.setState({err:err});
       }
 
