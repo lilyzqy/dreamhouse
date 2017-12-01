@@ -19,7 +19,7 @@ class LoginForm extends React.Component{
     return (e) => {
       e.preventDefault();
       const user = this.state;
-      this.props.login(user);
+      this.props.login(user).then(()=> this.props.history.push("/profile"));
     };
   }
 
@@ -32,7 +32,7 @@ class LoginForm extends React.Component{
   }
 
   loginDemoUser(){
-    return ()=> this.props.login({email:"racheal@gmail.com", password:"password"});
+    return ()=> this.props.login({email:"racheal@gmail.com", password:"password"}).then(this.props.history.push("/profile"));
   }
 
   render(){
