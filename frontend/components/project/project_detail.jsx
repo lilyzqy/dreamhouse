@@ -34,10 +34,16 @@ class ProjectDetail extends React.Component {
       return (<div></div>);
     }
     let link;
+    let deleteLink;
     if(this.props.currentUser && this.props.currentUser.id === project.user_id){
-      link = <a className="addPic" onClick={this.openModal()}>
+      link =
+        <a className="addPic" onClick={this.openModal()}>
         <i class="fa fa-plus" aria-hidden="true"></i>
         Add New Picture To the Project</a>;
+      deleteLink =
+        <a onClick={this.handleClick(project.id)}>
+        <i class="fa fa-trash" aria-hidden="true"></i>
+        Delete This Project</a>;
     }
     let items = project.project_pics_id
     .map(id => (<ProjectDetailItemsContainer key={id} id={id} />));
@@ -45,9 +51,7 @@ class ProjectDetail extends React.Component {
       <div>
         <h2 className="projecr-detail-title">
           <p className="location">{project.city} {project.state}</p>
-          <a onClick={this.handleClick(project.id)}>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-            Delete This Project</a>
+          {deleteLink}
         </h2>
         {link}
         <ul className="pics-index">

@@ -10,7 +10,6 @@ import NewPictureForm from './new_picture_form';
 
 const mapDTPs = dispatch => ({
   createPicture: (id,formPicture) => dispatch(createPicture(id,formPicture)),
-  fetchPictures: ()=> dispatch(fetchPictures)
 });
 
 export default withRouter(connect(null, mapDTPs)(NewPictureForm));

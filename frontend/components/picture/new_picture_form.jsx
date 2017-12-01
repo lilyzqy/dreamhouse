@@ -15,10 +15,6 @@ class ImageUpload extends React.Component {
     };
   }
 
-  componentWillReceiveProps(newProps){
-    console.log(newProps);
-  }
-
   onImageDrop(files) {
     this.setState({
       uploadedFile: files[0]
@@ -51,8 +47,7 @@ class ImageUpload extends React.Component {
       e.preventDefault();
       this.props.createPicture(this.props.match.params.projectId,
         {image_url:this.state.uploadedFileCloudinaryUrl})
-        .then(this.props.closeModal())
-        .then(this.fetchPictures);
+        .then(this.props.closeModal());
     };
   }
 

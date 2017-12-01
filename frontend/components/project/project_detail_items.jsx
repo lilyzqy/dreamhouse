@@ -7,11 +7,17 @@ class ProjectDetailItems extends React.Component {
     if(!pic){
       return (<div></div>);
     }
+    let link;
+    if(this.props.match.path === "/profile/projects/:projectId"){
+      link =
+      <a className="close" onClick={()=>this.props.deletePicture(this.props.id)
+          .then(this.props.fetchUserProjects(this.props.currentUser.id))}>
+          <i className="fa fa-times" aria-hidden="true"></i>
+        </a>;
+    }
     return (
       <li className="pic-item-li">
-        <a className="close">
-          <i class="fa fa-times" aria-hidden="true"></i>
-          </a>
+        {link}
         <img className="pics" src={pic.image_url}></img>
         <div className="pic-bottom">
           <i className="fa fa-expand" aria-hidden="true"></i>
