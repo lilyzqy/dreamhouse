@@ -14,7 +14,7 @@ class Favorites extends React.Component {
     const Pics = pics.map(pic => (
       <FavoriteItems key= {pic.id} pic={pic}
         deleteFavorite={this.props.deleteFavorite}
-        fetchUserFavoritedPictures={this.props.fetchUserFavoritedPictures} />
+        removePic={this.props.removePic} />
     ));
     if(!pics){
       return (<div>no</div>);

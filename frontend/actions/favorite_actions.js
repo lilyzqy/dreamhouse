@@ -7,5 +7,5 @@ export const createFavorite = (id) => dispatch =>(
 );
 
 export const deleteFavorite = (id) => dispatch => (
-  APIUtil.deleteFavorite(id).then(picture => dispatch(removePic(picture.id)))
+  APIUtil.deleteFavorite(id).then(picture => dispatch(receivePic(picture)))
 );
