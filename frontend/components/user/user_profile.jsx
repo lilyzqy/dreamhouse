@@ -28,7 +28,6 @@ class UserProfile extends React.Component {
     let ProjectLink = undefined;
     let AddButton = undefined;
     let ShowRoute = <Route exact path="/profile" component={UserFavoritesContainer} />;
-    console.log(this.props);
     if (currentUser.designer === true){
       ShowRoute = <Route exact path="/profile" component={UserProjectsContainer} />;
       if(this.props.location.pathname === '/profile'){
