@@ -21,7 +21,7 @@ class Favorites extends React.Component {
     }
     let link;
     if(this.props.currentUser.designer){
-      link = <Link to="/profile/projects" >My Projects</Link>;
+      link = <Link to="/profile" >My Projects</Link>;
     }
     return (
       <div>
