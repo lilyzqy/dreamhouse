@@ -43,7 +43,7 @@ class ProjectDetail extends React.Component {
                   backDropClosesModal={ true }
                   className={"modal-show"}
                   overlayClassName={"model-background"}>
-                  <p>Hi There, You need to Sign up or Log in to collect your favorite designs!</p>
+                  <p>Love the design? Don't let the inspiration slip away! Join us Today!</p>
                   <SignupFormContainer closeModal={this.closeModal}/>
                 </Modal>;
     if(this.props.currentUser && this.props.currentUser.id === project.user_id){
