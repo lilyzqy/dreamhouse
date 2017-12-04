@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class PicAllItems extends React.Component {
+
   handleClick(type){
     return ()=>{
       if (type === "favorite"){
-        this.props.createFavorite(this.props.pic.id);
+        if(this.props.currentUser){
+          this.props.createFavorite(this.props.pic.id);
+        }else{
+          this.props.openModal();
+        }
       }else{
         this.props.deleteFavorite(this.props.pic.id);
       }

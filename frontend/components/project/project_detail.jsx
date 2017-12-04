@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import ProjectDetailItemsContainer from './project_detail_items_container';
 import Modal from 'react-modal';
 import NewPictureFormContainer from '../picture/new_picture_form_container';
+import SignupFormContainer from '../session_form/signup_form_container';
+
 
 class ProjectDetail extends React.Component {
   constructor(){
@@ -13,7 +15,7 @@ class ProjectDetail extends React.Component {
   }
 
   openModal() {
-   return()=> this.setState({modalOn: true});
+   this.setState({modalOn: true});
   }
 
   closeModal() {
@@ -35,18 +37,36 @@ class ProjectDetail extends React.Component {
     }
     let link;
     let deleteLink;
+    let modal = <Modal
+                  isOpen={ this.state.modalOn}
+                  onRequestClose={ this.closeModal()}
+                  backDropClosesModal={ true }
+                  className={"modal-show"}
+                  overlayClassName={"model-background"}>
+                  <p>Hi There, You need to Sign up or Log in to collect your favorite designs!</p>
+                  <SignupFormContainer closeModal={this.closeModal}/>
+                </Modal>;
     if(this.props.currentUser && this.props.currentUser.id === project.user_id){
       link =
-        <a className="addPic" onClick={this.openModal()}>
+        <a className="addPic" onClick={()=>this.openModal()}>
         <i className="fa fa-plus" aria-hidden="true"></i>
         Add New Picture To the Project</a>;
       deleteLink =
         <a onClick={this.handleClick(project.id)}>
         <i className="fa fa-trash" aria-hidden="true"></i>
         Delete This Project</a>;
+      modal= <Modal
+        isOpen={ this.state.modalOn }
+        onRequestClose={ this.closeModal()}
+        backDropClosesModal={ true }
+        className={"modal-show"}
+        overlayClassName={"model-background"}>
+        <NewPictureFormContainer closeModal={this.closeModal.bind(this)}/>
+      </Modal>;
     }
     let items = project.project_pics_id
-    .map(id => (<ProjectDetailItemsContainer key={id} id={id} />));
+    .map(id => (<ProjectDetailItemsContainer key={id} id={id}
+                openModal={this.openModal.bind(this)}/>));
     return (
       <div>
         <h2 className="projecr-detail-title">
@@ -57,14 +77,7 @@ class ProjectDetail extends React.Component {
         <ul className="pics-index">
           {items}
         </ul>
-        <Modal
-          isOpen={ this.state.modalOn}
-          onRequestClose={ this.closeModal()}
-          backDropClosesModal={ true }
-          className={"modal-show"}
-          overlayClassName={"model-background"}>
-          <NewPictureFormContainer closeModal={this.closeModal.bind(this)}/>
-        </Modal>
+        {modal}
       </div>
     );
   }

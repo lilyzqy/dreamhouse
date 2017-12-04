@@ -7,6 +7,7 @@ import { deleteFavorite, createFavorite } from '../../actions/favorite_actions';
 import PicDetail from './pic_detail';
 
 const mapSTPs = (state,ownProps) => ({
+  currentUser: state.session.currentUser,
   picture: state.entities.pictures[ownProps.match.params.picId],
   users: state.entities.users,
   projects: state.entities.projects

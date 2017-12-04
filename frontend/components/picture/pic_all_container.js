@@ -6,6 +6,7 @@ import PicAll from './pic_all';
 
 
 const mapSTPs = (state) => ({
+  currentUser: state.session.currentUser,
   pictures: state.entities.pictures
 });
 

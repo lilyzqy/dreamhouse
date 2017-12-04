@@ -67,11 +67,3 @@ class UserProfile extends React.Component {
 }
 
 export default UserProfile;
-// <Route exact path="/profile/projects/new" component={NewProjectFormContainer} />
-// <div>
-//   {ProjectLink}
-//   <Link to={`users/${currentUser.id}/projects`} >Projects</Link>
-// </div>
-
-
-// ProjectLink = (<Link to={`users/${currentUser.id}/favorites`} >Favorites</Link>);

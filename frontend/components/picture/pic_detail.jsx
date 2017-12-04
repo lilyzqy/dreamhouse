@@ -1,7 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
+
+import SignupFormContainer from '../session_form/signup_form_container';
+
 
 class PicDetail extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      modalOn: false
+    };
+  }
+
+  openModal() {
+   this.setState({modalOn: true});
+  }
+
+  closeModal() {
+    return ()=> this.setState({modalOn: false});
+  }
+
   componentWillMount(){
     let test = this;
     this.props.fetchPicture(this.props.match.params.picId).then(()=>{
@@ -14,7 +33,11 @@ class PicDetail extends React.Component {
   handleClick(type){
     return ()=>{
       if (type === "favorite"){
-        this.props.createFavorite(this.props.picture.id);
+        if(this.props.currentUser){
+          this.props.createFavorite(this.props.picture.id);
+        }else{
+          this.openModal();
+        }
       }else{
         this.props.deleteFavorite(this.props.picture.id);
       }
@@ -63,6 +86,15 @@ class PicDetail extends React.Component {
             </div>
           </div>
         </div>
+        <Modal
+          isOpen={ this.state.modalOn}
+          onRequestClose={ this.closeModal()}
+          backDropClosesModal={ true }
+          className={"modal-show"}
+          overlayClassName={"model-background"}>
+          <p>Hi There, You need to Sign up or Log in to collect your favorite designs!</p>
+          <SignupFormContainer closeModal={this.closeModal}/>
+        </Modal>
       </div>
     );
   }
