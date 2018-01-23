@@ -1,5 +1,5 @@
 .pics {
-  max-height: 470px;
+  max-height: 220px;
   // max-width: 400px;
   height: auto;
   width: auto;
@@ -8,15 +8,12 @@
   z-index: -1;
 }
 
-.pics:hover {
-  color: rgb(17, 17, 17);
-  // opacity: 0.5;
-}
 
 .pics-index {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
+  margin-left: 80px;
 }
 
 .inside-title {
@@ -36,7 +33,7 @@
 
 .pic-item-li {
   position: relative;
-  margin:20px;
+  margin:10px;
 }
 
 .pic-item-li:hover {
