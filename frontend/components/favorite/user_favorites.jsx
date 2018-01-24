@@ -32,6 +32,17 @@ class Favorites extends React.Component {
         <ul className= "pics-index">
           {Pics}
         </ul>
+        <Modal>
+          <Modal
+            isOpen={ this.state.modalOn}
+            onRequestClose={ this.closeModal()}
+            backDropClosesModal={ true }
+            className={"modal-show"}
+            overlayClassName={"model-background"}>
+            <p>Love the design? Don't let the inspiration slip away! Join us Today!</p>
+            // <SignupFormContainer closeModal={this.closeModal}/>
+          </Modal>
+        </Modal>
       </div>
     );
   }
