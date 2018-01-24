@@ -5,6 +5,25 @@ import values from 'lodash/values';
 import FavoriteItems from './favorite_items';
 
 class Favorites extends React.Component {
+  constructor(){
+    this.state = {
+      modalOn: false,
+      modalImage: ""
+    };
+  }
+
+  closeModal(){
+    return ()=>{
+      this.setState({modalOn: false});
+    };
+  }
+
+  openModal(url){
+    return ()=>{
+      this.setState({modalOn: true, modalImage: url});
+    };
+  }
+
   componentDidMount(){
     this.props.fetchUserFavoritedPictures();
   }
