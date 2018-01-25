@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import values from 'lodash/values';
+import Modal from 'react-modal';
 
 import FavoriteItems from './favorite_items';
 
 class Favorites extends React.Component {
   constructor(){
+    super();
     this.state = {
-      modalOn: false,
+      modalOn: true,
       modalImage: ""
     };
   }
@@ -51,16 +53,14 @@ class Favorites extends React.Component {
         <ul className= "pics-index">
           {Pics}
         </ul>
-        <Modal>
-          <Modal
-            isOpen={ this.state.modalOn}
-            onRequestClose={ this.closeModal()}
-            backDropClosesModal={ true }
-            className={"modal-show"}
-            overlayClassName={"model-background"}>
-            <p>Love the design? Don't let the inspiration slip away! Join us Today!</p>
-            // <SignupFormContainer closeModal={this.closeModal}/>
-          </Modal>
+        <Modal
+          isOpen={true}
+          onRequestClose={ this.closeModal()}
+          backDropClosesModal={ true }
+          className={"modal-show"}
+          overlayClassName={"model-background"}>
+          <p>Love the design? Don't let the inspiration slip away! Join us Today!</p>
+          <img className="pics" src={this.state.modalImage}></img>
         </Modal>
       </div>
     );
