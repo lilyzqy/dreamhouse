@@ -9,7 +9,7 @@ class Favorites extends React.Component {
   constructor(){
     super();
     this.state = {
-      modalOn: true,
+      modalOn: false,
       modalImage: ""
     };
   }
@@ -54,7 +54,7 @@ class Favorites extends React.Component {
           {Pics}
         </ul>
         <Modal
-          isOpen={true}
+          isOpen={this.state.modalOn}
           onRequestClose={ this.closeModal()}
           backDropClosesModal={ true }
           className={"modal-show"}
