@@ -22,6 +22,7 @@ class Favorites extends React.Component {
 
   openModal(url){
     return ()=>{
+      console.log(url);
       this.setState({modalOn: true, modalImage: url});
     };
   }
@@ -35,7 +36,8 @@ class Favorites extends React.Component {
     const Pics = pics.map(pic => (
       <FavoriteItems key= {pic.id} pic={pic}
         deleteFavorite={this.props.deleteFavorite}
-        removePic={this.props.removePic} />
+        removePic={this.props.removePic}
+        openModal={this.openModal.bind(this)}/>
     ));
     if(!pics){
       return (<div>no</div>);

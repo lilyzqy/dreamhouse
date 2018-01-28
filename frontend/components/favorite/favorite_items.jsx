@@ -16,7 +16,9 @@ class FavoriteItems extends React.Component {
           </a>
         <img className="pics" src={this.props.pic.image_url}></img>
         <div className="pic-bottom">
-          <i className="fa fa-expand" aria-hidden="true"></i>
+          <a onClick={this.props.openModal(this.props.pic.image_url)}>
+            <i className="fa fa-expand" aria-hidden="true"></i>
+          </a>
         </div>
       </li>
     );
