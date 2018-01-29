@@ -42,7 +42,6 @@ class ProjectDetailItems extends React.Component {
         {link}
         <img className="pics" src={pic.image_url}></img>
         <div className="pic-bottom">
-          <i className="fa fa-expand" aria-hidden="true"></i>
           <a className="like-button" onClick={this.handleClick(type)}>
             {likeButton}
           </a>

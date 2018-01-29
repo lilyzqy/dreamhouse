@@ -65,7 +65,6 @@ class PicDetail extends React.Component {
         <div className='up'>
           <img src={pic.image_url}></img>
           <div className="pic-bottom">
-            <i className="fa fa-expand" aria-hidden="true"></i>
             <a className="like-button" onClick={this.handleClick(type)}>
               <i className={`fa ${heartType}`} aria-hidden="true"></i>
             </a>

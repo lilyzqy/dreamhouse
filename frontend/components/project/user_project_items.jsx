@@ -20,13 +20,13 @@ class ProjectItems extends React.Component {
     }
     return(
       <li className={`project-item ${hide}`}>
-        <p>{title}</p>
+        <p>{project.city}, {project.state}</p>
         <Link className="polaroid" to={to}>
           <div className="frame">
             <img className="project-cover" src={project.cover_pic_url}></img>
           </div>
           <div className="note">
-            <p>{project.city}, {project.state}</p>
+            <p>{title}</p>
             <p>{project.project_pics_id.length}</p>
           </div>
         </Link>
