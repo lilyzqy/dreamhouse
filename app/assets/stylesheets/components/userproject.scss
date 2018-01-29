@@ -5,7 +5,7 @@
 
 .project-cover {
   // position: absolute;
-  height: 700px;
+  height: 350px;
   clip: rect(0,350px,350px,0px)
 }
 
@@ -18,7 +18,6 @@
 .frame{
   overflow: hidden;
   // position: relative;
-  width: 350px;
   height: 350px;
 }
 
@@ -46,9 +45,10 @@
 
 
 .project-index {
+  margin-left: 100px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  // justify-content: space-around;
   flex-direction: row;
 }
 
