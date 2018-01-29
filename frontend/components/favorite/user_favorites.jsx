@@ -59,10 +59,9 @@ class Favorites extends React.Component {
           isOpen={this.state.modalOn}
           onRequestClose={ this.closeModal()}
           backDropClosesModal={ true }
-          className={"modal-show"}
+          className={"modal-full"}
           overlayClassName={"model-background"}>
-          <p>Love the design? Don't let the inspiration slip away! Join us Today!</p>
-          <img className="pics" src={this.state.modalImage}></img>
+          <img className="full-pic" src={this.state.modalImage}></img>
         </Modal>
       </div>
     );
