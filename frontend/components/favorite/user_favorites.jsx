@@ -32,7 +32,11 @@ class Favorites extends React.Component {
   }
 
   render(){
+    let declare;
     const pics = values(this.props.pictures);
+    if(pics.length === 0){
+      declare = (<p className="declare">It seems like you don't have any favorited design, click here to start collecting</p>);
+    }
     const Pics = pics.map(pic => (
       <FavoriteItems key= {pic.id} pic={pic}
         deleteFavorite={this.props.deleteFavorite}
@@ -52,6 +56,7 @@ class Favorites extends React.Component {
           <h2>My Favorites</h2>
           {link}
         </div>
+        {declare}
         <ul className= "pics-index">
           {Pics}
         </ul>
