@@ -32,7 +32,7 @@ class Favorites extends React.Component {
   }
 
   render(){
-    let declare;
+    let declare = (<p className="declare"></p>);
     const pics = values(this.props.pictures);
     if(pics.length === 0){
       declare = (<p className="declare">It seems like you don't have any favorited design, click here to start collecting</p>);
