@@ -69,7 +69,6 @@ class ImageUpload extends React.Component {
               <p>Drop an image or click to select a file to upload.</p>
             </Dropzone>
           </div>
-          <div>
             {this.state.uploadedFileCloudinaryUrl === '' ? null :
             <div className="loaded">
               <img className="pic-preview" src={this.state.uploadedFileCloudinaryUrl} />
@@ -77,7 +76,6 @@ class ImageUpload extends React.Component {
               <button type="submit" > Add Picutre </button>
               <p>{err}</p>
             </div>}
-          </div>
         </form>
       </div>
     );
