@@ -45,7 +45,6 @@ class ProjectDetailItems extends React.Component {
           <a className="like-button" onClick={this.handleClick(type)}>
             {likeButton}
           </a>
-            <i className="fa fa-expand" aria-hidden="true"></i>
         </div>
       </li>
     );
