@@ -58,7 +58,10 @@ class ImageUpload extends React.Component {
     return(
       <div>
         <form className="new-pic-form"onSubmit={this.handleSubmit()}>
-          <div className="FileUpload">
+          <a className="close" onClick={this.props.closeModal()}>
+            <i className="fa fa-times" aria-hidden="true"></i>
+          </a>
+          <div className="FileUpload upload">
             <Dropzone
               multiple={false}
               accept="image/*"
