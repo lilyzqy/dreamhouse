@@ -57,7 +57,7 @@ class Favorites extends React.Component {
           {link}
         </div>
         {declare}
-        <ul className= "pics-index">
+        <ul className= "pics-index fav">
           {Pics}
         </ul>
         <Modal

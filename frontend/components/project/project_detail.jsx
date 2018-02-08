@@ -74,7 +74,7 @@ class ProjectDetail extends React.Component {
           {deleteLink}
         </h2>
         {link}
-        <ul className="pics-index">
+        <ul className="pics-index pro">
           {items}
         </ul>
         {modal}
