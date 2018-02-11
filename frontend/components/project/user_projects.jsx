@@ -24,7 +24,7 @@ class UserProjects extends React.Component {
         <Link to="/profile/favorites" >My Favorites</Link>
       </div>);
       if(Projects.length === 0){
-        declare = (<p className="declare">It seems like you don't have any projects yet, click <Link to="/pictures">here</Link> to add your first project</p>);
+        declare = (<p className="declare">It seems like you don't have any projects yet, click Add New Project to get started</p>);
       }
     }
     return (

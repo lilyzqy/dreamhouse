@@ -29,7 +29,7 @@ class UserProfile extends React.Component {
     let AddButton = undefined;
     let ShowRoute = <Route exact path="/profile" component={UserFavoritesContainer} />;
     if (currentUser.designer === true){
-      ShowRoute = <Route exact path="/profile" component={UserProjectsContainer} />;
+      ShowRoute = <Route exact path="/profile" component={UserProjectsContainer}/>;
       if(this.props.location.pathname === '/profile'){
       AddButton = <a onClick={this.openModal()}>Add New Project</a>;
       }
