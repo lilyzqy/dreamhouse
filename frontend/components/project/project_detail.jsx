@@ -27,7 +27,7 @@ class ProjectDetail extends React.Component {
   }
 
   handleClick(id){
-    return ()=> this.props.deleteProject(id).then(()=>this.props.history.push('/profile/projects'));
+    return ()=> this.props.deleteProject(id).then(()=>this.props.history.push('/profile'));
   }
 
   render(){
