@@ -17,17 +17,22 @@ class UserProjects extends React.Component {
     let projects = values(this.props.projects);
     let Projects = projects.map(project => <ProjectItems key={project.id} project={project}/>);
     let user = this.props.user;
+    let declare;
     if (this.props.match.path === '/profile'){
       text = (<div>
         <h2>My Projects</h2>
         <Link to="/profile/favorites" >My Favorites</Link>
       </div>);
+      if(Projects.length === 0){
+        declare = (<p className="declare">It seems like you don't have any projects yet, click <Link to="/pictures">here</Link> to add your first project</p>);
+      }
     }
     return (
       <div className="projects">
         <div className="fav-title">
           {text}
         </div>
+        {declare}
         <ul className="project-index">
           {Projects}
         </ul>
