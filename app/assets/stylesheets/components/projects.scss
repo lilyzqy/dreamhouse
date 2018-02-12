@@ -16,11 +16,17 @@
   cursor: pointer;
 }
 
+.project-detail-back{
+  margin-left: 180px;
+    margin-top: 20px;
+    display: block;
+}
+
 .projecr-detail-title {
   display: flex;
   justify-content: space-between;
   margin-left: 180px;
-  margin-top: 60px;
+  margin-top: 20px;
   margin-right: 160px;
   color: grey;
 }
