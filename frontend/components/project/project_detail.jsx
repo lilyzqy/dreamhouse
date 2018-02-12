@@ -69,6 +69,7 @@ class ProjectDetail extends React.Component {
                 openModal={this.openModal.bind(this)}/>));
     return (
       <div>
+        <a onClick={()=>{this.props.history.push('/profile');}}>Back to Project List</a>
         <h2 className="projecr-detail-title">
           <p className="location">{project.city} {project.state}</p>
           {deleteLink}
