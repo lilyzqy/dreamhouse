@@ -5,7 +5,7 @@
     if project.pictures != []
       json.set! 'cover_pic_url', project.pictures.first.image_url
     else
-      json.set! 'cover_pic_url','https://images.unsplash.com/photo-1492371451031-f0830e91b3d9?auto=format&fit=crop&w=1122&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
+      json.set! 'cover_pic_url','http://res.cloudinary.com/dreamhousesf/image/upload/v1518545526/ae2ee1_798a7314e11d4df3a509952840479417_mv2_xpfwnh.gif'
     end
   end
 end
