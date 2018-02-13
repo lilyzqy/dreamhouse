@@ -12,14 +12,16 @@
   margin-left: 180px;
   margin-bottom: 20px;
 }
-.addPic:hover, .project-detail-back:hover{
+.addPic:hover, .project-detail-back:hover, .projecr-detail-title > a:hover{
   cursor: pointer;
+  color: #d4d4d6;
 }
 
 .project-detail-back{
-  margin-left: 180px;
+    margin-left: 180px;
     margin-top: 20px;
     display: block;
+    width: 120px;
 }
 
 .projecr-detail-title {
@@ -33,10 +35,6 @@
 
 .fa-trash {
   margin-right: 5px;
-}
-
-.projecr-detail-title > a:hover{
-  cursor: pointer;
 }
 
 .hide{
