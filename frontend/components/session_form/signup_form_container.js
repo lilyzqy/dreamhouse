@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import SignupForm from './signup_form';
 import { clearError } from '../../actions/error_actions';
 
-import { signup } from '../../actions/session_actions';
+import { signup, login } from '../../actions/session_actions';
 
 
 const mapSTPs = (state) => {
@@ -16,7 +16,8 @@ const mapSTPs = (state) => {
 const mapDTPs = (dispatch) =>{
   return {
     clearError: () => dispatch(clearError()),
-    signup: formUser => dispatch(signup(formUser))
+    signup: formUser => dispatch(signup(formUser)),
+    login: formUser => dispatch(login(formUser))
   };
 };
 
