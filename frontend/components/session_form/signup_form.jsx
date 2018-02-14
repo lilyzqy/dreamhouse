@@ -40,6 +40,13 @@ class SignupForm extends React.Component{
     };
   }
 
+  loginDemoUser(){
+    return (e)=>{
+      e.preventDefault();
+      this.props.login({email:"racheal@gmail.com", password:"password"}).then(this.props.history.push("/profile"));
+    };
+  }
+
   render(){
     let err;
     if(this.props.errors.length !== 0){
@@ -59,6 +66,9 @@ class SignupForm extends React.Component{
           I'm a designer</label>
         <div className="session-button">
           <button type='sumbit' onClick={this.handleSubmit()}>Sign Up</button>
+        </div>
+        <div>
+          <button onClick={this.loginDemoUser()}>Don't want to signup yet? Try our Demo Login first</button>
         </div>
         {err}
       </form>
