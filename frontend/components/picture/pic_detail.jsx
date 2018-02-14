@@ -72,7 +72,7 @@ class PicDetail extends React.Component {
         </div>
         <div className='bottom'>
           <div className='bottom-left'>
-            <h3>Picture Infomation</h3>
+            <h3>Project Information</h3>
             <p>
               location: {project.city} {project.state}
             </p>
