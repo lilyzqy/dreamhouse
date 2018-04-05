@@ -44,6 +44,9 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'rspec_junit_formatter'
 end
 
 group :development do
