@@ -13,25 +13,25 @@ class UserProjects extends React.Component {
   }
 
   render(){
-    let text=<h2>Project Gallary</h2>;
+    let text=(<div className="fav-title">
+                <h2>Project Gallary</h2>
+              </div>);
     let projects = values(this.props.projects);
     let Projects = projects.map(project => <ProjectItems key={project.id} project={project}/>);
     let user = this.props.user;
     let declare;
     if (this.props.match.path === '/profile'){
-      text = (<div>
-        <h2>My Projects</h2>
-        <Link to="/profile/favorites" >My Favorites</Link>
-      </div>);
+      text = (<div className="fav-title">
+                <h2 className="tab">My Projects</h2>
+                <Link className="tab" to="/profile/favorites" >My Favorites</Link>
+              </div>);
       if(Projects.length === 0){
         declare = (<p className="declare">It seems like you don't have any projects yet, click Add New Project to get started</p>);
       }
     }
     return (
       <div className="projects">
-        <div className="fav-title">
-          {text}
-        </div>
+        {text}
         {declare}
         <ul className="project-index">
           {Projects}

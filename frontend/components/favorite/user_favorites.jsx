@@ -48,12 +48,12 @@ class Favorites extends React.Component {
     }
     let link;
     if(this.props.currentUser.designer){
-      link = <Link to="/profile" >My Projects</Link>;
+      link = <Link className="tab" to="/profile" >My Projects</Link>;
     }
     return (
       <div>
         <div className="fav-title">
-          <h2>My Favorites</h2>
+          <h2 className="tab">My Favorites</h2>
           {link}
         </div>
         {declare}

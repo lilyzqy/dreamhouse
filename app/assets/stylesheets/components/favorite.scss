@@ -1,13 +1,25 @@
 .fav-title{
   margin-left: 140px;
   margin-top: 40px;
+  display: flex;
+  flex-direction: row;
 }
 
 .fav-title h2 {
-  color: grey;
+  font-size: 16px;
+  color: black;
+  padding-right: 10px; 
+  border-right: 0.7px solid grey;
 }
 
 .declare{
   margin-top: 30px;
   margin-left: 140px;
+}
+
+.tab{
+  color: grey;
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 16px;
 }
